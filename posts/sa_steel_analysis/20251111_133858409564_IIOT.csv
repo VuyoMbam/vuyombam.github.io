@@ -1,0 +1,58 @@
+﻿"Copyright 2025 Quantec EasyData"
+"Download Date: 2025-11-11"
+"Data Set: IIOT—SA Standardised Industry Input and Output Structure at basic prices"
+"Source: Quantec"
+"Frequency: Annual"
+"","","","","",""
+"Input","","","Intermediate Input: Basic iron and steel products; casting of metal [QSIC 351, 353]","Intermediate Input: Structural metal products [QSIC 354]","Intermediate Input: Other fabricated metal products [QSIC 355]"
+"Unit","Date","Output","","",""
+"Rand million: Current prices","2024","Intermediate Output: Agriculture [QSIC 11]",2195.262890154638,135.6446710369187,635.0017137015727
+"Rand million: Current prices","2024","Intermediate Output: Forestry [QSIC 12]",2.73786100484957,21.086854616199,213.5635560587489
+"Rand million: Current prices","2024","Intermediate Output: Fishing [QSIC 13]",19.0787347288075,512.5744631110873,255.8764348420544
+"Rand million: Current prices","2024","Intermediate Output: Coal [QSIC 21]",133.1847683543812,293.7985852509764,2422.038337255483
+"Rand million: Current prices","2024","Intermediate Output: Gold [QSIC 23]",344.049511213008,393.9987709478912,3763.782776747511
+"Rand million: Current prices","2024","Intermediate Output: Metals [QSIC 24]",1350.9361209982328,1350.1720965544018,8851.60976859615
+"Rand million: Current prices","2024","Intermediate Output: Other mining and quarrying [22, 25-29]",136.6029613373007,858.3284633515543,1359.556656977441
+"Rand million: Current prices","2024","Intermediate Output: Food [QSIC 301-304]",6.526264337778637,326.4441019980072,2975.605608430957
+"Rand million: Current prices","2024","Intermediate Output: Beverages and tobacco [QSIC 305-306]",23.02058198008444,261.0829827277442,2030.87713201535
+"Rand million: Current prices","2024","Intermediate Output: Textiles [QSIC 311-312]",17.55469249905142,22.767617721729767,152.1087792816916
+"Rand million: Current prices","2024","Intermediate Output: Wearing apparel [QSIC 313-314]",8.91943473397948,126.45218996707868,809.9311960655126
+"Rand million: Current prices","2024","Intermediate Output: Leather and leather and fur products [QSIC 315-316]","",6.481159913265295,54.35783079348687
+"Rand million: Current prices","2024","Intermediate Output: Footwear [QSIC 317]",1.219431185462651,4.512737833945639,40.98577136444745
+"Rand million: Current prices","2024","Intermediate Output: Wood and wood products [QSIC 321-322]",22.90523164567,68.95184965426508,545.4666891889349
+"Rand million: Current prices","2024","Intermediate Output: Paper and paper products [QSIC 323]","",58.73638884544084,387.9844910595764
+"Rand million: Current prices","2024","Intermediate Output: Printing , recorded media [QSIC 324-326]","",49.9246191334492,256.6742857608182
+"Rand million: Current prices","2024","Intermediate Output: Coke, petroleum products and nuclear fuel [QSIC 331-333]",768.2381672192473,196.4345617755756,1555.099617159828
+"Rand million: Current prices","2024","Intermediate Output: Basic chemicals [QSIC 334]",27.20430916362663,62.04724454934814,486.6537915250906
+"Rand million: Current prices","2024","Intermediate Output: Other chemical products [QSIC 335-336]",39.60419448238229,161.7888727111419,1323.653840775509
+"Rand million: Current prices","2024","Intermediate Output: Rubber products [QSIC 337]",20.26638019457191,112.2387681385276,1037.341147121945
+"Rand million: Current prices","2024","Intermediate Output: Plastic products [QSIC 338]",16.23337749921711,22.94013697794306,130.5806982168673
+"Rand million: Current prices","2024","Intermediate Output: Glass and glass products [QSIC 341]",21.19897821824762,15.17873704364441,115.0070638311389
+"Rand million: Current prices","2024","Intermediate Output: Non-metallic mineral products [QSIC 342]",84.7155000563176,61.45296430510017,538.5905498621242
+"Rand million: Current prices","2024","Intermediate Output: Basic iron and steel products; casting of metal [QSIC 351, 353]",2933.337046263704,136.6448788591361,424.064404527297
+"Rand million: Current prices","2024","Intermediate Output: Non-ferrous metal products [QSIC 352]",115.4692995683403,76.4918624652915,148.2308777124273
+"Rand million: Current prices","2024","Intermediate Output: Structural metal products [QSIC 354]",5138.386900700769,125.7561122172959,971.0539957774358
+"Rand million: Current prices","2024","Intermediate Output: Other fabricated metal products [QSIC 355]",7308.510208846599,380.4089833854504,3280.324911013378
+"Rand million: Current prices","2024","Intermediate Output: Machinery and equipment [QSIC 356-359]",11270.590155308237,677.6707758541155,4581.114920873426
+"Rand million: Current prices","2024","Intermediate Output: Electrical machinery [QSIC 361-366]",422.8222683502689,105.56967087738434,911.6458824415896
+"Rand million: Current prices","2024","Intermediate Output: Radio, television and communication apparatus [QSIC 371-373]",23.72071340638577,32.10959449438133,290.0673910132286
+"Rand million: Current prices","2024","Intermediate Output: Professional equipment [QSIC 374-376]",52.06821375436611,19.22647946424776,171.6174500483632
+"Rand million: Current prices","2024","Intermediate Output: Motor vehicles, parts and accessories [QSIC 381-383]",4869.533467083715,355.6466076419963,2974.984104657967
+"Rand million: Current prices","2024","Intermediate Output: Other transport equipment [QSIC 384-387]",334.3748782885654,42.92023974849673,384.8190820759683
+"Rand million: Current prices","2024","Intermediate Output: Furniture [QSIC 391]",426.845524058162,156.9611702780558,1484.605749291772
+"Rand million: Current prices","2024","Intermediate Output: Other manufacturing groups [QSIC 392 - 395]",838.1507662166497,129.8564008278765,875.0546547175979
+"Rand million: Current prices","2024","Intermediate Output: Electricity and gas [QSIC 41]",316.2320376524374,927.4236145357332,1142.043356290286
+"Rand million: Current prices","2024","Intermediate Output: Water [QSIC 42]",24.24387123624295,454.5597724669599,427.2167636580792
+"Rand million: Current prices","2024","Intermediate Output: Construction [QSIC 5]",1004.927169996742,22224.98532410233,9654.244095532104
+"Rand million: Current prices","2024","Intermediate Output: Wholesale and retail trade [QSIC 61-63]","",442.2443410237154,2416.2528654265143
+"Rand million: Current prices","2024","Intermediate Output: Catering and accommodation services [QSIC 64]","",88.9564466201076,347.8014660320364
+"Rand million: Current prices","2024","Intermediate Output: Transport and storage [QSIC 71-74]","",285.1840242498714,773.632229738902
+"Rand million: Current prices","2024","Intermediate Output: Communication [QSIC 75]","",116.78225003003884,338.8834555780058
+"Rand million: Current prices","2024","Intermediate Output: Finance and insurance [QSIC 81-82]","",49.81288583032013,421.934300226887
+"Rand million: Current prices","2024","Intermediate Output: Professional business services [QSIC 831-883]",64.90240082611453,1135.7679180999269,3936.336974172064
+"Rand million: Current prices","2024","Intermediate Output: Business activities n.e.c. [QSIC 889]","",117.7983918056597,353.6032239458025
+"Rand million: Current prices","2024","Intermediate Output: National and Provincial government [QSIC 911]","",725.0787607208405,950.0354239911068
+"Rand million: Current prices","2024","Intermediate Output: Local government [QSIC 913]",15.80704419529397,110.8006698598335,397.3657617552556
+"Rand million: Current prices","2024","Intermediate Output: Education (Private) [QSIC 92]",11.71970385927833,96.14562113418572,789.5623908469549
+"Rand million: Current prices","2024","Intermediate Output: Health and social work (Private) [QSIC 93]","",125.7740052825886,442.8343387369168
+"Rand million: Current prices","2024","Intermediate Output: Other community, social and personal services [QSIC 94-96, 99]",54.11673383863079,465.282385453634,619.4973064305696

@@ -1,0 +1,121 @@
+---
+author: "Vuyo Mbam"
+title: Flow of steel in the Gauteng Economy
+# jupyter: python3
+date: 2025-12-31
+categories: [Steel]
+description: "Use of steel in the African Economy."
+image: "/previews/input_output_analysis.png" 
+featured: true
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    fig-cap-location: bottom
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+```{python}
+import sys
+from pathlib import Path
+
+# Compute project root (one level up from articles/)
+project_root = Path.cwd().parents[1]
+if str(project_root) not in sys.path:
+    sys.path.insert(0, str(project_root))
+
+
+
+```
+
+
+
+```{python}
+from site_utils import export, plotly_theme
+import pandas as pd
+import plotly.graph_objects as go
+import plotly.express as px
+import numpy as np
+import matplotlib.pyplot as plt
+
+```
+
+
+
+```{python}
+df = pd.read_csv("20251111_133858409564_IIOT.csv", skiprows=7).drop(columns=["Unit", "Date"])
+# df.columns = ["Output"] + [i for i in df.Output.values]
+df.columns =  ["Output", "Input: Basic iron and steel products; casting of metal [QSIC 351, 353]","Input: Structural metal products [QSIC 354]","Input: Other fabricated metal products [QSIC 355]"]
+# df.columns = df.columns.str.replace("Intermediate Output: ", "Input: ")
+# df.Output  = df.Output.str.replace('Intermediate Output: ', 'Output: ')
+
+```
+
+```{python}
+links = []
+# inputs = df.columns.values[1:].tolist()
+inputs = df.loc[:, ['Output', 'Input: Basic iron and steel products; casting of metal [QSIC 351, 353]']].columns.values[1:].tolist()
+outputs = df.Output.values
+for input in inputs:
+    for output in outputs:
+        val = df.loc[df.Output == output, input].values[0]
+        if val > 0:
+            links.append((input, output, val))
+
+sources, targets, values = zip(*links)
+
+nodes = inputs + [i for i in outputs]
+node_indices = {node: i for i, node in enumerate(nodes)}
+
+x_pos = {}
+for n in inputs:
+    x_pos[n] = 0.05
+for n in outputs:
+    x_pos[n] = 0.85
+
+
+fig = go.Figure(data=[go.Sankey(
+    # arrangement = 'fixed',
+    node = dict(
+        pad = 15,
+        thickness = 15,
+        label = nodes,
+        # color = 'blue',
+        x = [x_pos[n] for n in nodes]
+    ),
+    link = dict(
+        source = [node_indices[s] for s in sources],
+        target = [node_indices[t] for t in targets],
+        value = values,
+        # color="rgba(0,150,250,0.4)"
+    )
+)])
+
+fig.update_layout(
+    title_text="Use of Crude steel and steel products as an input in the South Africa Economy - 2024",
+    font_size=11,
+    font_family = 'Arial',
+    font_color = 'black',
+    annotations=[
+        dict(
+            text="<i>Source: CSIR Analysis based on data from Quantec.</i>",
+            xref="paper", yref="paper",
+            x=0, y=-0.12,          # position below chart
+            showarrow=False,
+            font=dict(size=10, color="black", family = 'Arial'),
+            xanchor='left',
+        )
+    ],
+    margin=dict(t=40, b=100, l=20, r=20),
+    width = 900,
+    height = 1000
+)
+
+export.save_preview(fig)
+
+fig.show()
+
+```

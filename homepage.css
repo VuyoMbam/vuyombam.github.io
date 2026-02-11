@@ -1,0 +1,50 @@
+/* 1. Profile Image Styling */
+.profile-img {
+    max-width: 250px;
+    height: auto;
+    border: 3px solid #228B22; /* Renewable Green Border */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+/* 2. Responsive Alignment */
+.hero-container {
+    align-items: center; /* Vertical center on desktop */
+    padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .profile-section {
+        text-align: center; /* Center text on mobile */
+        margin-bottom: 2rem;
+    }
+    
+    .profile-img {
+        max-width: 200px;
+    }
+}
+
+/* 3. Article & Interview Card Customization */
+.quarto-grid-item {
+    border-radius: 8px !important;
+    transition: transform 0.2s ease-in-out;
+    border-bottom: 4px solid #555555; /* Default Coal Grey */
+}
+
+.quarto-grid-item:hover {
+    transform: translateY(-5px);
+    border-bottom: 4px solid #228B22; /* Switches to Green on hover */
+}
+
+/* 4. Expertise Section Styling */
+.expertise-card {
+    padding: 1.5rem;
+    background: rgba(128, 128, 128, 0.05);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.expertise-card h4 {
+    color: #228B22;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,22 @@
+---
+author: "Vuyo Mbam"
+title: "Green hydrogen skills report"
+date: 2025-01-15
+categories: [Green Hydrogen, Skills]
+description: ""
+image: "/images/gh2_skills_cover.png" 
+featured: true
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    fig-cap-location: bottom
+execute:
+  echo: false
+  warning: false
+  message: false
+  featured: false
+---
+
+{{< lipsum 1 >}}

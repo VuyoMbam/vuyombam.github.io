@@ -1,0 +1,12 @@
+{
+  "hash": "79973740e36a106f423f1fd33e4dc63a",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\nexecute:\n  echo: false\n---\n\n<!-- setup.qmd -->\n\n<!-- ```{python}\n# import plotly.graph_objects as go\nimport plotly.io as pio\n\npio.templates[\"site\"] = dict(\n    layout = dict(\n        font = dict(\n            family = \"Arial, Consolas, sans-serif\",\n            color = \"#1a1a1a\",\n            size = 14\n        ),\n        title = dict(\n            font = dict(size = 18),\n            x = 0,\n            xanchor = \"left\"\n        ),\n        paper_bgcolor = \"#993737\",\n        plot_bgcolor = \"#602D2D\",\n        colorway = [\"#2a4f7c\"],\n        xaxis = dict(\n            showgrid = True,\n            gridcolor = \"#e6e6e6\",\n            zeroline = False,\n            showline = True,\n            linecolor = \"#cccccc\",\n            tickfont = dict(size=12)\n        ),\n        margin = dict(l=40, r=30, t=60, b=40),\n        legend = dict(\n            orientation = \"h\",\n            y = -0.25,\n            x = 0,\n            title = None\n        )\n    )\n)\n\npio.templates.default = \"site\"\nprint(\"PLOTLY THEME LOADED\")\n\n``` -->\n\n\n\n",
+    "supporting": [
+      "setup_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

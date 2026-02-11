@@ -1,0 +1,215 @@
+/*-- scss:defaults --*/
+$primary-color: #000000;
+$navbar-color: #120424;
+$secondary-color: #ffffff;
+$button-color: #F2B53B;
+
+
+
+ /* Colors */
+ $body-bg: $primary-color;
+ $body-color: $secondary-color;
+
+ /*-- scss:rules --*/
+//  body {
+//      background-color: $primary-color;
+//  }
+ 
+ .navbar {
+     background-color: $primary-color;
+     padding: 0px;
+     z-index: 1000;
+ }
+ .navbar .navbar-container {
+     display: flex;
+     justify-content: space-between;
+     align-items:center;
+     background-color: $navbar-color;
+     border-radius: 0 0 20px 20px;
+ }
+
+ /* Increase NavBar icon size and add spacing */
+.navbar-nav .nav-link i {
+    font-size: 1.25rem;
+    padding-left: 10px;
+    transition: color 0.3s ease;
+}
+
+/* Change icon color on hover to your brand green */
+.navbar-nav .nav-link:hover {
+    color: #228B22 !important; /* Renewable Green */
+}
+
+/* Style the search input to match your site's aesthetic */
+.quarto-search {
+    margin-right: 15px;
+}
+
+/* Optional: Make the search icon green on hover to match your brand */
+.quarto-search .bi-search:hover {
+    color: #228B22;
+}
+
+/* Ensure the icons look good on mobile toggle menus */
+@media (max-width: 991px) {
+    .navbar-nav .nav-link i {
+        padding-left: 0;
+        margin-right: 10px;
+    }
+}
+ 
+// h1, h2, h3, h4, h5 {
+    
+// }
+
+/* 1. Profile Image Styling */
+.profile-img {
+    max-width: auto;
+    height: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+/* 2. Responsive Alignment */
+
+.hero-container {
+    align-items: center;
+    padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .profile-section {
+        text-align: center; /* Center text on mobile */
+        margin-bottom: 2rem;
+    }
+    
+    .profile-img {
+        max-width: 200px;
+    }
+}
+
+/* Disable clicking/hover effects on heading anchors */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    pointer-events: none; /* Makes the link unclickable */
+    cursor: default;      /* Keeps the arrow cursor instead of a hand */
+    color: inherit;       /* Ensures the color matches the heading text */
+    text-decoration: none; /* Removes underlines */
+}
+
+/* Specifically for Quarto's anchor-link icons (the '#' that appears on hover) */
+.anchor-section {
+    display: none !important;
+}
+
+.quarto-grid-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px !important;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(72, 66, 73, 0.5);
+}
+
+
+.quarto-grid-item:hover {
+    transform: translateY(-5px);
+    border-bottom: 4px solid #228B22;
+}
+
+
+.quarto-grid-item h3 {
+font-size: 1.1rem;
+}
+
+
+/* Container for the buttons */
+.cta-buttons {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between the two buttons */
+}
+
+/* Base button styling */
+.cta-buttons .btn {
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-radius: 30px; /* Rounded pill shape */
+    display: inline-flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+/* Custom Green for LinkedIn/Professional look if you prefer */
+.btn-outline-primary {
+    color: #0077b5;
+    border-color: #0077b5;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0077b5;
+    color: white;
+}
+
+/* GitHub Hover Effect */
+.btn-outline-dark:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* 4. Expertise Section Styling */
+
+/* Style the Bootstrap Icons */
+.expertise-card i, iconify-icon {
+    font-size: 3rem;       /* Make them large and readable */
+    color: #228B22;        /* Using your renewable green color */
+    margin-bottom: 1rem;
+    display: block;        /* Centers them on their own line */
+}
+
+
+/* Add a subtle hover effect to the icon specifically */
+.expertise-card:hover i {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.expertise-card:hover iconify-icon {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Expertise Card styling (updated for better height handling) */
+.expertise-card {
+    padding: 2rem;
+    background: rgba(128, 128, 128, 0.05);
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.expertise-card:hover {
+    background: rgba(34, 139, 34, 0.05); /* Very light green tint */
+    border-color: #228B22;
+}
+
+.expertise-card h4 {
+    color: #228B22;
+    margin-bottom: 1rem;
+}
+
+/* Style the CV download button specifically */
+.btn-success {
+    background-color: #228B22; /* Your Renewable Green */
+    border-color: #228B22;
+    padding: 12px 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #1a6b1a; /* Darker green on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}

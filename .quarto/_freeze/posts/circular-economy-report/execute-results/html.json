@@ -1,0 +1,12 @@
+{
+  "hash": "c519e44a38782ac5c5a86b4fdb033791",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\nauthor: \"Vuyo Mbam\"\ntitle: \"Energy and the Circular Economy\"\ndate: 2023-07-01\ncategories: [Energy Security, Circular Economy]\ndescription: \"Improving energy security in South Africa through a more circular energy sector.\"\nthumbnail: \"/images/circular_economy_cover.png\" \nformat:\n  html:\n    toc: true\n    toc-depth: 2\n    number-sections: true\n    fig-cap-location: bottom\nexecute:\n  echo: false\n  warning: false\n  message: false\n  # python: \"/start.py\"\n---\n\n\n\n::: {#63bde552 .cell execution_count=2}\n\n::: {.cell-output .cell-output-stdout}\n```\nPLOTLY THEME LOADED\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "circular-economy-report_files\\figure-html"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

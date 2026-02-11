@@ -1,0 +1,45 @@
+{
+  "about.qmd": {
+    "about.html": "ab38afda"
+  },
+  "articles.qmd": {
+    "articles.html": "f876787f"
+  },
+  "index.qmd": {
+    "index.html": "6891adc6"
+  },
+  "posts/circular-economy-report.qmd": {
+    "circular-economy-report.html": "e9127b9c",
+    "index.html": "f81b4803"
+  },
+  "posts/coal-transition.qmd": {
+    "coal-transition.html": "819af42c"
+  },
+  "posts/green-hydrogen-report.qmd": {
+    "green-hydrogen-report.html": "88ef146e"
+  },
+  "setup.qmd": {
+    "setup.html": "04a13018"
+  },
+  "posts/sa_steel_analysis/input_output_analysis.qmd": {
+    "input_output_analysis.html": "0f25e6f0"
+  },
+  "index_old.qmd": {
+    "index_old.html": "301413f8"
+  },
+  "interviews/cranfield-interview.qmd": {
+    "cranfield-interview.html": "6685b72f"
+  },
+  "interviews/interview-with-habib.qmd": {
+    "interview-with-habib.html": "67336cce"
+  },
+  "posts/new-homepage.qmd": {
+    "new-homepage.html": "90982816"
+  },
+  "posts/sa_energy_balance/energy_balance_analysis.ipynb": {
+    "energy_balance_analysis.html": "e6694ab5"
+  },
+  "check-animations.qmd": {
+    "check-animations.html": "86ad90d7"
+  }
+}

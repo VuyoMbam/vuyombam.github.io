@@ -1,0 +1,21 @@
+---
+author: "Vuyo Mbam"
+title: "Energy and the Circular Economy"
+date: 2023-07-01
+categories: [Energy Security, Circular Economy]
+description: "Improving energy security in South Africa through a more circular energy sector."
+thumbnail: "/images/circular_economy_cover.png" 
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    fig-cap-location: bottom
+execute:
+  echo: false
+  warning: false
+  message: false
+  # python: "/start.py"
+---
+
+

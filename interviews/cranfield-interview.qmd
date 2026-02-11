@@ -1,0 +1,14 @@
+---
+title: "Why study Renewable Energy MSc - Vuyo Mbam"
+image: https://img.youtube.com/vi/747cXNqETUs/hqdefault.jpg
+description: Vuyo Mbam talks about the Renewable Energy MSc offered at Cranfield University.
+date: 2022-02-09
+categories: [Interview]
+featured: true
+format:
+  html:
+    include-in-header:
+        text: |
+            <meta http-equiv="refresh" content="0; url=https://www.youtube.com/watch?v=747cXNqETUs">
+            <script type="text/javascript"> window.location.href="https://www.youtube.com/watch?v=747cXNqETUs" </script>
+---

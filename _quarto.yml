@@ -1,0 +1,47 @@
+project: 
+  type: website
+  
+
+website: 
+  title: "Energy with Vuyo Mbam"
+  description: "Official website of Vuyo Mbam, an Energy Sector Analyst & Advisor providing insights on energy system transitions, energy policy, economic impacts with a particular focus on the South African market"
+  open-graph: true
+  page-navigation: true
+  navbar:
+    background: "#000000" 
+    search: true
+    left: 
+      - text: "Home"
+        href: index.qmd
+      - text: "Articles"
+        href: articles.qmd
+    right: 
+      - icon: file-earmark-pdf
+        text: "Resume"
+        href: /assets/Vuyo_Mbam_CV.pdf
+        target: _blank
+      - icon: linkedin
+        href: https://www.linkedin.com/in/vuyo-mbam-495316184/
+        aria-label: LinkedIn
+        target: _blank
+      - icon: github
+        href: https://github.com/VuyoMbam
+        aria-label: Github
+        target: _blank
+    toggle-position: right
+    pinned: true
+
+  page-footer: 
+    center: "© 2025, Vuyo Mbam"
+    background: "#120424"
+
+
+      
+format: 
+  html: 
+    anchor-sections: false
+    page-layout: full
+    mainfont: 'consolas'
+    theme: [styles.scss]
+    toc: false
+
