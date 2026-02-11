@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>energy_balance_analysis – Energy with Vuyo Mbam</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-474aa2243a947ff42641f0a17feb1f1e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script type="text/javascript">
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+</script>
+<script type="module">import "https://cdn.plot.ly/plotly-3.0.1.min"</script>
+
+
+
+<meta property="og:title" content="Energy with Vuyo Mbam">
+<meta property="og:site_name" content="Energy with Vuyo Mbam">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Energy with Vuyo Mbam</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../articles.html"> 
+<span class="menu-text">Articles</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../assets/Vuyo_Mbam_CV.pdf" target="_blank"> <i class="bi bi-file-earmark-pdf" role="img">
+</i> 
+<span class="menu-text">Resume</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/vuyo-mbam-495316184/" target="_blank"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/VuyoMbam" target="_blank"> <i class="bi bi-github" role="img" aria-label="Github">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<div id="7b167474" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import dependences</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="1e19f1dc" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"eb_2023.csv"</span>).set_index(<span class="st">"Flow"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.loc[:, <span class="st">'Coal'</span>:].astype(<span class="st">'float'</span>).reset_index()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="7893a28a" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fuels <span class="op">=</span> [<span class="st">'Coal'</span>, <span class="st">'Crude oil'</span>, <span class="st">'Oil products'</span>, <span class="st">'Natural gas'</span>, <span class="st">'Nuclear'</span>, <span class="st">'Hydro'</span>, <span class="st">'Geo-therm., Solar etc.'</span>,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Biofuels and Waste'</span>, <span class="st">'Electricity'</span>, <span class="st">'Heat'</span>]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>primary_flows <span class="op">=</span> [<span class="st">'Production'</span>, <span class="st">'Imports'</span>]</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>transformation_flows <span class="op">=</span> [<span class="st">'Electricity plants'</span>, <span class="st">'CHP plants'</span>, <span class="st">'Heat plants'</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                        <span class="st">'Blast furnaces'</span>, <span class="st">'Gas works'</span>, <span class="st">'Coke/pat. fuel/BKB/PB plants'</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                        <span class="st">'Oil refineries'</span>, <span class="st">'Petrochemical plants'</span>, <span class="st">'Liquefaction plants'</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                        <span class="st">'Other transformation'</span>, </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                        <span class="st">'Losses'</span>]</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>final_flows <span class="op">=</span> [<span class="st">'INDUSTRY'</span>, <span class="st">'TRANSPORT'</span>, <span class="st">'OTHER'</span>, <span class="st">'Energy industry own use'</span>,<span class="st">'NON-ENERGY USE'</span>, <span class="st">'Exports'</span>, <span class="st">'Intl. marine bunkers'</span>, </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                 <span class="st">'Intl. aviation bunkers'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="303ca0f7" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fuel_colors <span class="op">=</span> {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Coal'</span>: <span class="st">'#4B4B4B'</span>,            <span class="co"># dark grey</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Crude oil'</span>: <span class="st">'#A0522D'</span>,       <span class="co"># brown</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Oil products'</span>: <span class="st">'#FFA500'</span>,    <span class="co"># orange</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Natural gas'</span>: <span class="st">'#1E90FF'</span>,     <span class="co"># blue</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Nuclear'</span>: <span class="st">'#9A32CD'</span>,         <span class="co"># purple</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Hydro'</span>: <span class="st">'#00BFFF'</span>,           <span class="co"># light blue</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Geo-therm., Solar etc.'</span>: <span class="st">'#228B22'</span>,  <span class="co"># green</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Biofuels and Waste'</span>: <span class="st">'#FFD700'</span>,   <span class="co"># yellow</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Electricity'</span>: <span class="st">'#E31A1C'</span>,     <span class="co"># red</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Heat'</span>: <span class="st">'#FF6347'</span>             <span class="co"># tomato</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="b86494da" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hex_to_rgba(hex_color, alpha<span class="op">=</span><span class="fl">0.6</span>):</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    hex_color <span class="op">=</span> hex_color.lstrip(<span class="st">'#'</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    r, g, b <span class="op">=</span> <span class="bu">tuple</span>(<span class="bu">int</span>(hex_color[i:i<span class="op">+</span><span class="dv">2</span>], <span class="dv">16</span>) <span class="cf">for</span> i <span class="kw">in</span> (<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f"rgba(</span><span class="sc">{</span>r<span class="sc">}</span><span class="ss">,</span><span class="sc">{</span>g<span class="sc">}</span><span class="ss">,</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">,</span><span class="sc">{</span>alpha<span class="sc">}</span><span class="ss">)"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_link_color(source, target):</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> source <span class="kw">in</span> fuel_colors:</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> hex_to_rgba(fuel_colors[source], <span class="fl">0.5</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> target <span class="kw">in</span> fuel_colors:</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> hex_to_rgba(fuel_colors[target], <span class="fl">0.5</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"rgba(180,180,180,0.3)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="9a083ba8" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x_pos <span class="op">=</span> {}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> primary_flows:</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    x_pos[n] <span class="op">=</span> <span class="fl">0.05</span>           <span class="co"># far left</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> fuels:</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    x_pos[n] <span class="op">=</span> <span class="fl">0.30</span>           <span class="co"># mid-left</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> transformation_flows:</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    x_pos[n] <span class="op">=</span> <span class="fl">0.60</span>           <span class="co"># mid-right</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> final_flows:</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    x_pos[n] <span class="op">=</span> <span class="fl">0.85</span>           <span class="co"># far right</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>y_pos <span class="op">=</span> {}</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> distribute_y(group, start<span class="op">=</span><span class="fl">0.05</span>, end<span class="op">=</span><span class="fl">0.95</span>):</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    spacing <span class="op">=</span> np.linspace(start, end, <span class="bu">len</span>(group))</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n, y <span class="kw">in</span> <span class="bu">zip</span>(group, spacing):</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        y_pos[n] <span class="op">=</span> y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cc799f07" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>links <span class="op">=</span> []</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Primary flows</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> flow <span class="kw">in</span> primary_flows:</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> fuel <span class="kw">in</span> fuels:</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        val <span class="op">=</span> df.loc[df[<span class="st">'Flow'</span>] <span class="op">==</span> flow, fuel].values[<span class="dv">0</span>]</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> val <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>            links.append((flow, fuel, <span class="bu">abs</span>(val)))</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> val <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>            links.append((fuel, flow, <span class="bu">abs</span>(val)))</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Transformation flows</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> flow <span class="kw">in</span> transformation_flows:</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> fuel <span class="kw">in</span> fuels:</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>        val <span class="op">=</span> df.loc[df[<span class="st">'Flow'</span>] <span class="op">==</span> flow, fuel].values[<span class="dv">0</span>]</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> val <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>            links.append((flow, fuel, <span class="bu">abs</span>(val)))</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> val <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>            links.append((fuel, flow, <span class="bu">abs</span>(val)))</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Final flows</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> flow <span class="kw">in</span> final_flows:</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> fuel <span class="kw">in</span> fuels:</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>        val <span class="op">=</span> df.loc[df[<span class="st">'Flow'</span>] <span class="op">==</span> flow, fuel].values[<span class="dv">0</span>]</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> val <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>            links.append((fuel, flow, <span class="bu">abs</span>(val)))</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> val <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>            links.append((fuel, flow, <span class="bu">abs</span>(val)))</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Optional filtering to declutter ---</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>link_colors <span class="op">=</span> [get_link_color(s, t) <span class="cf">for</span> s, t, _ <span class="kw">in</span> links]</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="co"># total = sum([v for _, _, v in links])</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="co"># links = [(s, t, v) for s, t, v in links if v &gt; 0.005 * total]</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="co"># nodes = list(dict.fromkeys(primary_flows + fuels + transformation_flows + final_flows))</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>nodes <span class="op">=</span> primary_flows <span class="op">+</span> fuels <span class="op">+</span> transformation_flows <span class="op">+</span> final_flows</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>used_nodes <span class="op">=</span> <span class="bu">set</span>([s <span class="cf">for</span> s, _, _ <span class="kw">in</span> links] <span class="op">+</span> [t <span class="cf">for</span> _, t, _ <span class="kw">in</span> links])</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>nodes <span class="op">=</span> [n <span class="cf">for</span> n <span class="kw">in</span> nodes <span class="cf">if</span> n <span class="kw">in</span> used_nodes]</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>node_indices <span class="op">=</span> {node: i <span class="cf">for</span> i, node <span class="kw">in</span> <span class="bu">enumerate</span>(nodes)}</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>sources, targets, values <span class="op">=</span> <span class="bu">zip</span>(<span class="op">*</span>links)</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>node_colors <span class="op">=</span> []</span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> nodes:</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="kw">in</span> fuel_colors:</span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>        node_colors.append(fuel_colors[n])</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> n <span class="kw">in</span> primary_flows:</span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>        node_colors.append(<span class="st">"#CCCCCC"</span>)</span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> n <span class="kw">in</span> transformation_flows:</span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>        node_colors.append(<span class="st">"#87CEEB"</span>)</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> n <span class="kw">in</span> final_flows:</span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>        node_colors.append(<span class="st">"#F4A460"</span>)</span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>        node_colors.append(<span class="st">"#D3D3D3"</span>)</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>distribute_y(primary_flows)</span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a>distribute_y(fuels)</span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>distribute_y(transformation_flows)</span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>distribute_y(final_flows)</span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure(data<span class="op">=</span>[go.Sankey(</span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>    arrangement <span class="op">=</span> <span class="st">'snap'</span>,</span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a>    node<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>        pad<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>        thickness<span class="op">=</span><span class="dv">15</span>,</span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span>nodes,</span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span> node_colors,</span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>        x<span class="op">=</span>[x_pos[n] <span class="cf">for</span> n <span class="kw">in</span> nodes],</span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>        y<span class="op">=</span>[y_pos[n] <span class="cf">for</span> n <span class="kw">in</span> nodes]</span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a>    link<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a>        source<span class="op">=</span>[node_indices[s] <span class="cf">for</span> s <span class="kw">in</span> sources],</span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a>        target<span class="op">=</span>[node_indices[t] <span class="cf">for</span> t <span class="kw">in</span> targets],</span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>        value<span class="op">=</span>values,</span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a>        <span class="co"># color="rgba(0,150,250,0.4)"</span></span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span>link_colors</span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>)])</span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="co"># fig.update_layout(title_text="South Africa Energy Balance - 2023", font_size=10)</span></span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>    title_text<span class="op">=</span><span class="st">"South Africa Energy Balance - 2023"</span>,</span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>    font_size<span class="op">=</span><span class="dv">11</span>,</span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>    annotations<span class="op">=</span>[</span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>        <span class="bu">dict</span>(</span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>            text<span class="op">=</span><span class="st">"&lt;i&gt;Source: Vuyo Mbam based on South Africa Energy Balance 2023 (IEA, DMRE)&lt;/i&gt;"</span>,</span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>            xref<span class="op">=</span><span class="st">"paper"</span>, yref<span class="op">=</span><span class="st">"paper"</span>,</span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span><span class="dv">0</span>, y<span class="op">=-</span><span class="fl">0.12</span>,          <span class="co"># position below chart</span></span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a>            showarrow<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a>            font<span class="op">=</span><span class="bu">dict</span>(size<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">"gray"</span>),</span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a>            xanchor<span class="op">=</span><span class="st">'left'</span>,</span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>    margin<span class="op">=</span><span class="bu">dict</span>(t<span class="op">=</span><span class="dv">80</span>, b<span class="op">=</span><span class="dv">80</span>, l<span class="op">=</span><span class="dv">10</span>, r<span class="op">=</span><span class="dv">10</span>),</span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a>    width <span class="op">=</span> <span class="dv">1400</span>,</span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a>    height <span class="op">=</span> <span class="dv">800</span></span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a>fig.write_html(<span class="st">"SA_Energy_Flow.html"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>                <div id="add0cf14-f5a2-4bdf-b492-9c24c2037c18" class="plotly-graph-div" style="height:800px; width:1400px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("add0cf14-f5a2-4bdf-b492-9c24c2037c18")) {                    Plotly.newPlot(                        "add0cf14-f5a2-4bdf-b492-9c24c2037c18",                        [{"arrangement":"snap","link":{"color":["rgba(75,75,75,0.5)","rgba(160,82,45,0.5)","rgba(255,165,0,0.5)","rgba(30,144,255,0.5)","rgba(154,50,205,0.5)","rgba(0,191,255,0.5)","rgba(34,139,34,0.5)","rgba(255,215,0,0.5)","rgba(75,75,75,0.5)","rgba(160,82,45,0.5)","rgba(255,165,0,0.5)","rgba(30,144,255,0.5)","rgba(227,26,28,0.5)","rgba(75,75,75,0.5)","rgba(255,165,0,0.5)","rgba(154,50,205,0.5)","rgba(0,191,255,0.5)","rgba(34,139,34,0.5)","rgba(255,215,0,0.5)","rgba(227,26,28,0.5)","rgba(75,75,75,0.5)","rgba(75,75,75,0.5)","rgba(75,75,75,0.5)","rgba(160,82,45,0.5)","rgba(255,165,0,0.5)","rgba(75,75,75,0.5)","rgba(160,82,45,0.5)","rgba(30,144,255,0.5)","rgba(255,215,0,0.5)","rgba(227,26,28,0.5)","rgba(75,75,75,0.5)","rgba(255,165,0,0.5)","rgba(30,144,255,0.5)","rgba(255,215,0,0.5)","rgba(227,26,28,0.5)","rgba(255,165,0,0.5)","rgba(227,26,28,0.5)","rgba(75,75,75,0.5)","rgba(255,165,0,0.5)","rgba(30,144,255,0.5)","rgba(255,215,0,0.5)","rgba(227,26,28,0.5)","rgba(75,75,75,0.5)","rgba(255,165,0,0.5)","rgba(30,144,255,0.5)","rgba(227,26,28,0.5)","rgba(255,165,0,0.5)","rgba(75,75,75,0.5)","rgba(160,82,45,0.5)","rgba(255,165,0,0.5)","rgba(30,144,255,0.5)","rgba(227,26,28,0.5)","rgba(255,165,0,0.5)","rgba(255,165,0,0.5)"],"source":[0,0,0,0,0,7,0,0,1,1,1,1,1,2,4,6,11,8,9,11,2,13,2,3,15,2,16,5,9,10,2,4,5,9,10,4,10,2,4,5,9,10,2,4,5,10,4,2,3,4,5,10,4,4],"target":[2,3,4,5,6,0,8,9,2,3,4,5,10,11,11,11,7,11,11,10,12,2,14,15,4,16,3,16,17,18,19,19,19,19,19,20,20,21,21,21,21,21,22,22,22,22,23,24,24,24,24,24,25,26],"value":[5497285.924,0.037647,312218.6356,655.0,136647.8788,29858.5516,78529.08028,652280.5,51069.14308,307174.6899,798101.1678,133923.4218,29602.8,2375269.072,30449.0625,106941.8182,36529.6716,61786.07522,4298.84,721797.1189,20747.93,21779.7237,22298.20344,444202.875,376440.5256,11476.08,180768.7965,51487.1451,221515.2,27669.6,852163.9016,56405.8071,60857.53551,82216.04,365714.712,712990.6906,7273.764,247488.8644,303822.1401,1494.34155,344250.42,902668.5623,750.95064,553221.3855,19958.33023,42708.0384,108338.424,1094444.382,1.7343,136194.21,392.679,33634.8,2265.658827,2421.510367]},"node":{"color":["#CCCCCC","#CCCCCC","#4B4B4B","#A0522D","#FFA500","#1E90FF","#9A32CD","#00BFFF","#228B22","#FFD700","#E31A1C","#87CEEB","#87CEEB","#87CEEB","#87CEEB","#87CEEB","#87CEEB","#87CEEB","#87CEEB","#F4A460","#F4A460","#F4A460","#F4A460","#F4A460","#F4A460","#F4A460","#F4A460"],"label":["Production","Imports","Coal","Crude oil","Oil products","Natural gas","Nuclear","Hydro","Geo-therm., Solar etc.","Biofuels and Waste","Electricity","Electricity plants","Blast furnaces","Gas works","Coke\u002fpat. fuel\u002fBKB\u002fPB plants","Oil refineries","Liquefaction plants","Other transformation","Losses","INDUSTRY","TRANSPORT","OTHER","Energy industry own use","NON-ENERGY USE","Exports","Intl. marine bunkers","Intl. aviation bunkers"],"pad":20,"thickness":15,"x":[0.05,0.05,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.6,0.85,0.85,0.85,0.85,0.85,0.85,0.85,0.85],"y":[0.05,0.95,0.05,0.15,0.25,0.35,0.44999999999999996,0.5499999999999999,0.65,0.75,0.85,0.05,0.32,0.41,0.49999999999999994,0.5900000000000001,0.77,0.86,0.95,0.05,0.17857142857142855,0.3071428571428571,0.43571428571428567,0.5642857142857143,0.6928571428571428,0.8214285714285714,0.95]},"type":"sankey"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"title":{"text":"South Africa Energy Balance - 2023"},"font":{"size":11},"margin":{"t":80,"b":80,"l":10,"r":10},"annotations":[{"font":{"color":"gray","size":10},"showarrow":false,"text":"\u003ci\u003eSource: Vuyo Mbam based on South Africa Energy Balance 2023 (IEA, DMRE)\u003c\u002fi\u003e","x":0,"xanchor":"left","xref":"paper","y":-0.12,"yref":"paper"}],"width":1400,"height":800},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('add0cf14-f5a2-4bdf-b492-9c24c2037c18');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+</div>
+<div id="53b89145" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>primary_fuels <span class="op">=</span> [<span class="st">'Coal'</span>, <span class="st">'Biofuels and Waste'</span>, <span class="st">'Crude oil'</span>, <span class="st">'Natural gas'</span>, <span class="st">'Nuclear'</span>, <span class="st">'Geo-therm., Solar etc.'</span>,<span class="st">'Hydro'</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>secondary_products <span class="op">=</span> [<span class="st">'Electricity'</span>, <span class="st">'Oil products'</span>,  <span class="st">'Heat'</span>]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>primary_flows <span class="op">=</span> [<span class="st">'Production'</span>, <span class="st">'Imports'</span>]</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>transformation_flows <span class="op">=</span> [<span class="st">'Electricity plants'</span>, <span class="st">'Oil refineries'</span>, <span class="st">'Liquefaction plants'</span>, <span class="st">'CHP plants'</span>, <span class="st">'Heat plants'</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                        <span class="st">'Blast furnaces'</span>, <span class="st">'Gas works'</span>, <span class="st">'Coke/pat. fuel/BKB/PB plants'</span>, <span class="st">'Petrochemical plants'</span>, </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                        <span class="st">'Other transformation'</span>]</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>final_flows <span class="op">=</span> [<span class="st">'INDUSTRY'</span>, <span class="st">'TRANSPORT'</span>, <span class="st">'OTHER'</span>, <span class="st">'Energy industry own use'</span>,<span class="st">'NON-ENERGY USE'</span>, <span class="st">'Exports'</span>, <span class="st">'Intl. marine bunkers'</span>, </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>                 <span class="st">'Intl. aviation bunkers'</span>, </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>                        <span class="st">'Losses'</span>]</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>links <span class="op">=</span> []</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Primary flows</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> flow <span class="kw">in</span> primary_flows:</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> fuel <span class="kw">in</span> primary_fuels <span class="op">+</span> secondary_products:</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>        val <span class="op">=</span> df.loc[df[<span class="st">'Flow'</span>] <span class="op">==</span> flow, fuel].values[<span class="dv">0</span>]</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> val <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>            links.append((flow, fuel, <span class="bu">abs</span>(val)))</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> val <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>            links.append((fuel, flow, <span class="bu">abs</span>(val)))</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Transformation flows</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> flow <span class="kw">in</span> transformation_flows:</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> fuel <span class="kw">in</span> primary_fuels:</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>        val <span class="op">=</span> df.loc[df[<span class="st">'Flow'</span>] <span class="op">==</span> flow, fuel].values[<span class="dv">0</span>]</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> val <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>            links.append((flow, fuel, <span class="bu">abs</span>(val)))</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> val <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>            links.append((fuel, flow, <span class="bu">abs</span>(val)))</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> flow <span class="kw">in</span> transformation_flows:</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> fuel <span class="kw">in</span> secondary_products:</span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>        val <span class="op">=</span> df.loc[df[<span class="st">'Flow'</span>] <span class="op">==</span> flow, fuel].values[<span class="dv">0</span>]</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> val <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>            links.append((flow, fuel, val))</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> val <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>            links.append((fuel, flow, <span class="bu">abs</span>(val)))</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Final flows</span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> flow <span class="kw">in</span> final_flows:</span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> fuel <span class="kw">in</span> primary_fuels <span class="op">+</span> secondary_products:</span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>        val <span class="op">=</span> df.loc[df[<span class="st">'Flow'</span>] <span class="op">==</span> flow, fuel].values[<span class="dv">0</span>]</span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> val <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>            links.append((fuel, flow, <span class="bu">abs</span>(val)))</span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> val <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>            links.append((fuel, flow, <span class="bu">abs</span>(val)))</span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Optional filtering to declutter ---</span></span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a>link_colors <span class="op">=</span> [get_link_color(s, t) <span class="cf">for</span> s, t, _ <span class="kw">in</span> links]</span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a><span class="co"># total = sum([v for _, _, v in links])</span></span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a><span class="co"># links = [(s, t, v) for s, t, v in links if v &gt; 0.005 * total]</span></span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a><span class="co"># nodes = list(dict.fromkeys(primary_flows + fuels + transformation_flows + final_flows))</span></span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a>nodes <span class="op">=</span> primary_flows <span class="op">+</span> primary_fuels <span class="op">+</span> transformation_flows <span class="op">+</span> secondary_products <span class="op">+</span> final_flows</span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a>used_nodes <span class="op">=</span> <span class="bu">set</span>([s <span class="cf">for</span> s, _, _ <span class="kw">in</span> links] <span class="op">+</span> [t <span class="cf">for</span> _, t, _ <span class="kw">in</span> links])</span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a>nodes <span class="op">=</span> [n <span class="cf">for</span> n <span class="kw">in</span> nodes <span class="cf">if</span> n <span class="kw">in</span> used_nodes]</span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a>node_indices <span class="op">=</span> {node: i <span class="cf">for</span> i, node <span class="kw">in</span> <span class="bu">enumerate</span>(nodes)}</span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a>sources, targets, values <span class="op">=</span> <span class="bu">zip</span>(<span class="op">*</span>links)</span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a>node_colors <span class="op">=</span> []</span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> nodes:</span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="kw">in</span> primary_fuels:</span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a>        node_colors.append(fuel_colors[n])</span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> n <span class="kw">in</span> primary_flows:</span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a>        node_colors.append(<span class="st">"#CCCCCC"</span>)</span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> n <span class="kw">in</span> transformation_flows:</span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a>        node_colors.append(<span class="st">"#87CEEB"</span>)</span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> n <span class="kw">in</span> secondary_products:</span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a>        node_colors.append(<span class="st">"#FF0000"</span>)</span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> n <span class="kw">in</span> final_flows:</span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a>        node_colors.append(<span class="st">"#F4A460"</span>)</span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a>        node_colors.append(<span class="st">"#D3D3D3"</span>)</span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a>x_pos <span class="op">=</span> {}</span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> primary_flows:</span>
+<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a>    x_pos[n] <span class="op">=</span> <span class="fl">0.05</span>           <span class="co"># far left</span></span>
+<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> fuels:</span>
+<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a>    x_pos[n] <span class="op">=</span> <span class="fl">0.25</span>           <span class="co"># mid-left</span></span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> transformation_flows:</span>
+<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a>    x_pos[n] <span class="op">=</span> <span class="fl">0.55</span>           <span class="co"># mid-right</span></span>
+<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> secondary_products:</span>
+<span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a>    x_pos[n] <span class="op">=</span> <span class="fl">0.75</span></span>
+<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> final_flows:</span>
+<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a>    x_pos[n] <span class="op">=</span> <span class="fl">0.95</span>  </span>
+<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a>distribute_y(primary_flows)</span>
+<span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a>distribute_y(primary_fuels)</span>
+<span id="cb8-98"><a href="#cb8-98" aria-hidden="true" tabindex="-1"></a>distribute_y(transformation_flows)</span>
+<span id="cb8-99"><a href="#cb8-99" aria-hidden="true" tabindex="-1"></a>distribute_y(secondary_products)</span>
+<span id="cb8-100"><a href="#cb8-100" aria-hidden="true" tabindex="-1"></a>distribute_y(final_flows)</span>
+<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure(data<span class="op">=</span>[go.Sankey(</span>
+<span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a>    arrangement <span class="op">=</span> <span class="st">'snap'</span>,</span>
+<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a>    node<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a>        pad<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a>        thickness<span class="op">=</span><span class="dv">15</span>,</span>
+<span id="cb8-107"><a href="#cb8-107" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span>nodes,</span>
+<span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span> node_colors,</span>
+<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a>        x<span class="op">=</span>[x_pos[n] <span class="cf">for</span> n <span class="kw">in</span> nodes],</span>
+<span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a>        y<span class="op">=</span>[y_pos[n] <span class="cf">for</span> n <span class="kw">in</span> nodes]</span>
+<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb8-112"><a href="#cb8-112" aria-hidden="true" tabindex="-1"></a>    link<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb8-113"><a href="#cb8-113" aria-hidden="true" tabindex="-1"></a>        source<span class="op">=</span>[node_indices[s] <span class="cf">for</span> s <span class="kw">in</span> sources],</span>
+<span id="cb8-114"><a href="#cb8-114" aria-hidden="true" tabindex="-1"></a>        target<span class="op">=</span>[node_indices[t] <span class="cf">for</span> t <span class="kw">in</span> targets],</span>
+<span id="cb8-115"><a href="#cb8-115" aria-hidden="true" tabindex="-1"></a>        value<span class="op">=</span>values,</span>
+<span id="cb8-116"><a href="#cb8-116" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span><span class="st">"rgba(0,150,250,0.4)"</span></span>
+<span id="cb8-117"><a href="#cb8-117" aria-hidden="true" tabindex="-1"></a>        <span class="co"># color=link_colors</span></span>
+<span id="cb8-118"><a href="#cb8-118" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb8-119"><a href="#cb8-119" aria-hidden="true" tabindex="-1"></a>)])</span>
+<span id="cb8-120"><a href="#cb8-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-121"><a href="#cb8-121" aria-hidden="true" tabindex="-1"></a><span class="co"># fig.update_layout(title_text="South Africa Energy Balance - 2023", font_size=10)</span></span>
+<span id="cb8-122"><a href="#cb8-122" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb8-123"><a href="#cb8-123" aria-hidden="true" tabindex="-1"></a>    title_text<span class="op">=</span><span class="st">"South Africa Energy Balance - 2023"</span>,</span>
+<span id="cb8-124"><a href="#cb8-124" aria-hidden="true" tabindex="-1"></a>    font_size<span class="op">=</span><span class="dv">11</span>,</span>
+<span id="cb8-125"><a href="#cb8-125" aria-hidden="true" tabindex="-1"></a>    annotations<span class="op">=</span>[</span>
+<span id="cb8-126"><a href="#cb8-126" aria-hidden="true" tabindex="-1"></a>        <span class="bu">dict</span>(</span>
+<span id="cb8-127"><a href="#cb8-127" aria-hidden="true" tabindex="-1"></a>            text<span class="op">=</span><span class="st">"&lt;i&gt;Source: Vuyo Mbam based on South Africa Energy Balance 2023 (IEA, DMRE)&lt;/i&gt;"</span>,</span>
+<span id="cb8-128"><a href="#cb8-128" aria-hidden="true" tabindex="-1"></a>            xref<span class="op">=</span><span class="st">"paper"</span>, yref<span class="op">=</span><span class="st">"paper"</span>,</span>
+<span id="cb8-129"><a href="#cb8-129" aria-hidden="true" tabindex="-1"></a>            x<span class="op">=</span><span class="dv">0</span>, y<span class="op">=-</span><span class="fl">0.12</span>,          <span class="co"># position below chart</span></span>
+<span id="cb8-130"><a href="#cb8-130" aria-hidden="true" tabindex="-1"></a>            showarrow<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb8-131"><a href="#cb8-131" aria-hidden="true" tabindex="-1"></a>            font<span class="op">=</span><span class="bu">dict</span>(size<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">"gray"</span>),</span>
+<span id="cb8-132"><a href="#cb8-132" aria-hidden="true" tabindex="-1"></a>            xanchor<span class="op">=</span><span class="st">'left'</span>,</span>
+<span id="cb8-133"><a href="#cb8-133" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb8-134"><a href="#cb8-134" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb8-135"><a href="#cb8-135" aria-hidden="true" tabindex="-1"></a>    margin<span class="op">=</span><span class="bu">dict</span>(t<span class="op">=</span><span class="dv">80</span>, b<span class="op">=</span><span class="dv">80</span>, l<span class="op">=</span><span class="dv">10</span>, r<span class="op">=</span><span class="dv">10</span>),</span>
+<span id="cb8-136"><a href="#cb8-136" aria-hidden="true" tabindex="-1"></a>    width <span class="op">=</span> <span class="dv">1400</span>,</span>
+<span id="cb8-137"><a href="#cb8-137" aria-hidden="true" tabindex="-1"></a>    height <span class="op">=</span> <span class="dv">800</span></span>
+<span id="cb8-138"><a href="#cb8-138" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-139"><a href="#cb8-139" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb8-140"><a href="#cb8-140" aria-hidden="true" tabindex="-1"></a>fig.write_html(<span class="st">"SA_Energy_Flow.html"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>                <div id="d827ab62-4f00-4589-853b-e3da0742e9c7" class="plotly-graph-div" style="height:800px; width:1400px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("d827ab62-4f00-4589-853b-e3da0742e9c7")) {                    Plotly.newPlot(                        "d827ab62-4f00-4589-853b-e3da0742e9c7",                        [{"arrangement":"snap","link":{"color":"rgba(0,150,250,0.4)","source":[0,0,0,0,0,0,8,0,1,1,1,1,1,2,3,6,7,9,4,2,11,5,2,13,2,3,9,17,10,2,3,5,16,17,16,17,2,3,5,16,17,2,5,16,17,17,2,4,5,16,17,17,17,16],"target":[2,3,4,5,6,7,0,17,2,4,5,16,17,9,9,9,9,8,10,11,4,11,12,2,14,15,16,9,17,18,18,18,18,18,19,19,20,20,20,20,20,21,21,21,21,22,23,23,23,23,23,24,25,26],"value":[5497285.924,652280.5,0.037647,655.0,136647.8788,78529.08028,29858.5516,312218.6356,51069.14308,307174.6899,133923.4218,29602.8,798101.1678,2375269.072,4298.84,106941.8182,61786.07522,36529.6716,444202.875,11476.08,180768.7965,51487.1451,20747.93,21779.7237,22298.20344,221515.2,721797.1189,30449.0625,376440.5256,852163.9016,82216.04,60857.53551,365714.712,56405.8071,7273.764,712990.6906,247488.8644,344250.42,1494.34155,902668.5623,303822.1401,750.95064,19958.33023,42708.0384,553221.3855,108338.424,1094444.382,1.7343,392.679,33634.8,136194.21,2265.658827,2421.510367,27669.6]},"node":{"color":["#CCCCCC","#CCCCCC","#4B4B4B","#FFD700","#A0522D","#1E90FF","#9A32CD","#228B22","#00BFFF","#87CEEB","#87CEEB","#87CEEB","#87CEEB","#87CEEB","#87CEEB","#87CEEB","#FF0000","#FF0000","#F4A460","#F4A460","#F4A460","#F4A460","#F4A460","#F4A460","#F4A460","#F4A460","#F4A460"],"label":["Production","Imports","Coal","Biofuels and Waste","Crude oil","Natural gas","Nuclear","Geo-therm., Solar etc.","Hydro","Electricity plants","Oil refineries","Liquefaction plants","Blast furnaces","Gas works","Coke\u002fpat. fuel\u002fBKB\u002fPB plants","Other transformation","Electricity","Oil products","INDUSTRY","TRANSPORT","OTHER","Energy industry own use","NON-ENERGY USE","Exports","Intl. marine bunkers","Intl. aviation bunkers","Losses"],"pad":20,"thickness":15,"x":[0.05,0.05,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.55,0.55,0.55,0.55,0.55,0.55,0.55,0.75,0.75,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95],"y":[0.05,0.95,0.05,0.2,0.35,0.49999999999999994,0.65,0.8,0.95,0.05,0.15,0.25,0.5499999999999999,0.65,0.75,0.95,0.05,0.49999999999999994,0.05,0.16249999999999998,0.27499999999999997,0.38749999999999996,0.49999999999999994,0.6125,0.725,0.8374999999999999,0.95]},"type":"sankey"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"title":{"text":"South Africa Energy Balance - 2023"},"font":{"size":11},"margin":{"t":80,"b":80,"l":10,"r":10},"annotations":[{"font":{"color":"gray","size":10},"showarrow":false,"text":"\u003ci\u003eSource: Vuyo Mbam based on South Africa Energy Balance 2023 (IEA, DMRE)\u003c\u002fi\u003e","x":0,"xanchor":"left","xref":"paper","y":-0.12,"yref":"paper"}],"width":1400,"height":800},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('d827ab62-4f00-4589-853b-e3da0742e9c7');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+</div>
+<div id="64f4d522" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Flow</th>
+<th data-quarto-table-cell-role="th">Coal</th>
+<th data-quarto-table-cell-role="th">Crude oil</th>
+<th data-quarto-table-cell-role="th">Oil products</th>
+<th data-quarto-table-cell-role="th">Natural gas</th>
+<th data-quarto-table-cell-role="th">Nuclear</th>
+<th data-quarto-table-cell-role="th">Hydro</th>
+<th data-quarto-table-cell-role="th">Geo-therm., Solar etc.</th>
+<th data-quarto-table-cell-role="th">Biofuels and Waste</th>
+<th data-quarto-table-cell-role="th">Electricity</th>
+<th data-quarto-table-cell-role="th">Heat</th>
+<th data-quarto-table-cell-role="th">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Production</td>
+<td>5.497286e+06</td>
+<td>0.037647</td>
+<td>3.122186e+05</td>
+<td>655.000000</td>
+<td>136647.87880</td>
+<td>-29858.5516</td>
+<td>78529.08028</td>
+<td>652280.50</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>6.647759e+06</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>Imports</td>
+<td>5.106914e+04</td>
+<td>307174.689900</td>
+<td>7.981012e+05</td>
+<td>133923.421800</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>2.960280e+04</td>
+<td>0.0</td>
+<td>1.319871e+06</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>Exports</td>
+<td>-1.094444e+06</td>
+<td>-1.734300</td>
+<td>-1.361942e+05</td>
+<td>-392.679000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>3.363480e+04</td>
+<td>0.0</td>
+<td>-1.197398e+06</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>Intl. marine bunkers</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>-2.265659e+03</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>-2.265659e+03</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>Intl. aviation bunkers</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>-2.421510e+03</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>-2.421510e+03</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>Stock changes</td>
+<td>0.000000e+00</td>
+<td>33857.766000</td>
+<td>-1.150836e+04</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>2.234940e+04</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>TPES</td>
+<td>4.453911e+06</td>
+<td>341030.759200</td>
+<td>9.579301e+05</td>
+<td>134185.742800</td>
+<td>136647.87880</td>
+<td>-29858.5516</td>
+<td>78529.08028</td>
+<td>652280.50</td>
+<td>6.323760e+04</td>
+<td>0.0</td>
+<td>6.787894e+06</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>Transfers</td>
+<td>0.000000e+00</td>
+<td>-180768.796500</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>-1.807688e+05</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>Statistical differences</td>
+<td>-9.454954e+05</td>
+<td>103172.115800</td>
+<td>4.308569e+05</td>
+<td>-388.390408</td>
+<td>-29706.06061</td>
+<td>-6671.1200</td>
+<td>-16743.00506</td>
+<td>0.00</td>
+<td>4.755839e+05</td>
+<td>0.0</td>
+<td>1.060894e+04</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>Electricity plants</td>
+<td>-2.375269e+06</td>
+<td>0.000000</td>
+<td>-3.044906e+04</td>
+<td>0.000000</td>
+<td>-106941.81820</td>
+<td>36529.6716</td>
+<td>-61786.07522</td>
+<td>-4298.84</td>
+<td>7.217971e+05</td>
+<td>0.0</td>
+<td>-1.820418e+06</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">10</th>
+<td>CHP plants</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>0.000000e+00</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">11</th>
+<td>Heat plants</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>0.000000e+00</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">12</th>
+<td>Blast furnaces</td>
+<td>-2.074793e+04</td>
+<td>0.000000</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>-2.074793e+04</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">13</th>
+<td>Gas works</td>
+<td>2.177972e+04</td>
+<td>0.000000</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>2.177972e+04</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">14</th>
+<td>Coke/pat. fuel/BKB/PB plants</td>
+<td>-2.229820e+04</td>
+<td>0.000000</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>-2.229820e+04</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">15</th>
+<td>Oil refineries</td>
+<td>0.000000e+00</td>
+<td>-444202.875000</td>
+<td>3.764405e+05</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>-6.776235e+04</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">16</th>
+<td>Petrochemical plants</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>0.000000e+00</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">17</th>
+<td>Liquefaction plants</td>
+<td>-1.147608e+04</td>
+<td>180768.796500</td>
+<td>0.000000e+00</td>
+<td>-51487.145100</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>1.178056e+05</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">18</th>
+<td>Other transformation</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>-221515.20</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>-2.215152e+05</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">19</th>
+<td>Energy industry own use</td>
+<td>-7.509506e+02</td>
+<td>0.000000</td>
+<td>-5.532214e+05</td>
+<td>-19958.330230</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>4.270804e+04</td>
+<td>0.0</td>
+<td>-5.312226e+05</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">20</th>
+<td>Losses</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>-2.766960e+04</td>
+<td>0.0</td>
+<td>-2.766960e+04</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">21</th>
+<td>TFC</td>
+<td>1.099653e+06</td>
+<td>0.000000</td>
+<td>1.181557e+06</td>
+<td>62351.877060</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>426466.46</td>
+<td>1.275657e+06</td>
+<td>0.0</td>
+<td>4.045685e+06</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">22</th>
+<td>INDUSTRY</td>
+<td>8.521639e+05</td>
+<td>0.000000</td>
+<td>5.640581e+04</td>
+<td>60857.535510</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>82216.04</td>
+<td>3.657147e+05</td>
+<td>0.0</td>
+<td>1.417358e+06</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">23</th>
+<td>Iron and steel</td>
+<td>1.467516e+05</td>
+<td>0.000000</td>
+<td>4.399168e+01</td>
+<td>10429.434000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>6.052777e+04</td>
+<td>0.0</td>
+<td>2.177528e+05</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">24</th>
+<td>Chemical and petrochemical</td>
+<td>4.888062e+04</td>
+<td>0.000000</td>
+<td>4.841073e+02</td>
+<td>37249.794000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>2.862346e+04</td>
+<td>0.0</td>
+<td>1.152380e+05</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">25</th>
+<td>Non-ferrous metals</td>
+<td>8.010410e+04</td>
+<td>0.000000</td>
+<td>0.000000e+00</td>
+<td>170.681400</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>5.424530e+04</td>
+<td>0.0</td>
+<td>1.345201e+05</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">26</th>
+<td>Non-metallic minerals</td>
+<td>1.905675e+04</td>
+<td>0.000000</td>
+<td>2.029961e+02</td>
+<td>5223.377700</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>7.228152e+03</td>
+<td>0.0</td>
+<td>3.171128e+04</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">27</th>
+<td>Transport equipment</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>4.838493e+01</td>
+<td>535.478400</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>1.773000e+02</td>
+<td>0.0</td>
+<td>7.611633e+02</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">28</th>
+<td>Machinery</td>
+<td>3.130578e+02</td>
+<td>0.000000</td>
+<td>0.000000e+00</td>
+<td>691.737300</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>2.180880e+02</td>
+<td>0.0</td>
+<td>1.222883e+03</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">29</th>
+<td>Mining and quarrying</td>
+<td>1.575828e+05</td>
+<td>0.000000</td>
+<td>4.668302e+04</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>1.014852e+05</td>
+<td>0.0</td>
+<td>3.057510e+05</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">30</th>
+<td>Food and tobacco</td>
+<td>9.511911e+02</td>
+<td>0.000000</td>
+<td>1.363301e+03</td>
+<td>2797.662600</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>2.354400e+03</td>
+<td>0.0</td>
+<td>7.466554e+03</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">31</th>
+<td>Paper, pulp and printing</td>
+<td>3.286904e+03</td>
+<td>0.000000</td>
+<td>2.694012e+02</td>
+<td>768.154410</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>3.846564e+03</td>
+<td>0.0</td>
+<td>8.171024e+03</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">32</th>
+<td>Wood and wood products</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>3.934487e+01</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>9.774360e+02</td>
+<td>0.0</td>
+<td>1.016781e+03</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">33</th>
+<td>Construction</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>2.343183e+03</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>7.546320e+02</td>
+<td>0.0</td>
+<td>3.097815e+03</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">34</th>
+<td>Textile and leather</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>3.317484e+00</td>
+<td>10.643400</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>4.221000e+02</td>
+<td>0.0</td>
+<td>4.360609e+02</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">35</th>
+<td>Non-specified</td>
+<td>3.952369e+05</td>
+<td>0.000000</td>
+<td>4.924761e+03</td>
+<td>2980.572300</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>82216.04</td>
+<td>1.048543e+05</td>
+<td>0.0</td>
+<td>5.902126e+05</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">36</th>
+<td>TRANSPORT</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>7.129907e+05</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>7.273764e+03</td>
+<td>0.0</td>
+<td>7.202645e+05</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">37</th>
+<td>Domestic aviation</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>6.892672e+04</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>2.013840e+02</td>
+<td>0.0</td>
+<td>6.912810e+04</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">38</th>
+<td>Road</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>6.394569e+05</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>2.354400e+02</td>
+<td>0.0</td>
+<td>6.396923e+05</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">39</th>
+<td>Rail</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>3.507287e+02</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>6.018084e+03</td>
+<td>0.0</td>
+<td>6.368813e+03</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">40</th>
+<td>Pipeline transport</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>5.558814e+02</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>3.949200e+01</td>
+<td>0.0</td>
+<td>5.953734e+02</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">41</th>
+<td>Domestic navigation</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>0.000000e+00</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">42</th>
+<td>Non-specified</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>3.700480e+03</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>7.793640e+02</td>
+<td>0.0</td>
+<td>4.479844e+03</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">43</th>
+<td>OTHER</td>
+<td>2.474889e+05</td>
+<td>0.000000</td>
+<td>3.038221e+05</td>
+<td>1494.341550</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>344250.42</td>
+<td>9.026686e+05</td>
+<td>0.0</td>
+<td>1.799724e+06</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">44</th>
+<td>Residential</td>
+<td>2.713310e+04</td>
+<td>0.000000</td>
+<td>1.656833e+02</td>
+<td>226.325250</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>20999.28</td>
+<td>1.230016e+05</td>
+<td>0.0</td>
+<td>1.715259e+05</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">45</th>
+<td>Comm. and public services</td>
+<td>2.670884e+04</td>
+<td>0.000000</td>
+<td>2.059403e+05</td>
+<td>1268.016300</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>7.562945e+05</td>
+<td>0.0</td>
+<td>9.902117e+05</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">46</th>
+<td>Agriculture/forestry</td>
+<td>2.327055e+02</td>
+<td>0.000000</td>
+<td>4.504578e+04</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>2.164979e+04</td>
+<td>0.0</td>
+<td>6.692827e+04</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">47</th>
+<td>Fishing</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>0.000000e+00</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">48</th>
+<td>Non-specified</td>
+<td>1.934142e+05</td>
+<td>0.000000</td>
+<td>5.267038e+04</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>323251.14</td>
+<td>1.722681e+03</td>
+<td>0.0</td>
+<td>5.710584e+05</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">49</th>
+<td>NON-ENERGY USE</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>1.083384e+05</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>1.083384e+05</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">50</th>
+<td>in industry/transf./energy</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>7.209423e+03</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>7.209423e+03</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">51</th>
+<td>of which: chem./petrochem.</td>
+<td>4.022404e+05</td>
+<td>0.000000</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>4.022404e+05</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">52</th>
+<td>in transport</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>4.310937e+03</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>4.310937e+03</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">53</th>
+<td>in other</td>
+<td>0.000000e+00</td>
+<td>0.000000</td>
+<td>9.681806e+04</td>
+<td>0.000000</td>
+<td>0.00000</td>
+<td>0.0000</td>
+<td>0.00000</td>
+<td>0.00</td>
+<td>0.000000e+00</td>
+<td>0.0</td>
+<td>9.681806e+04</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2025, Vuyo Mbam</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

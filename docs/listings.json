@@ -1,0 +1,22 @@
+[
+  {
+    "listing": "/articles.html",
+    "items": [
+      "/posts/circular-economy-report.html",
+      "/posts/coal-transition.html",
+      "/posts/green-hydrogen-report.html",
+      "/posts/sa_energy_balance/energy_balance_analysis.html",
+      "/posts/sa_steel_analysis/input_output_analysis.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/coal-transition.html",
+      "/posts/green-hydrogen-report.html",
+      "/posts/sa_steel_analysis/input_output_analysis.html",
+      "/interviews/cranfield-interview.html",
+      "/interviews/interview-with-habib.html"
+    ]
+  }
+]
