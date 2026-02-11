@@ -1,0 +1,326 @@
+---
+title: ""
+page-layout: full
+toc: false
+css: styles.scss
+listing:
+  - id: featured-articles
+    contents: posts
+    include:
+      featured: true
+    type: grid
+    max-items: 2
+    grid-item-border: false
+    grid-item-align: right
+    sort: date-desc
+  - id: featured-interviews
+    contents: interviews
+    include:
+      featured: true
+    type: grid
+    max-items: 2
+    grid-item-border: false
+    grid-item-align: right
+    sort: date-desc
+
+execute:
+    freeze: auto
+    echo: false
+
+---
+
+::: {.hero-container}
+
+::: {.grid .profile-section}
+
+::: {.g-col-12 .g-col-md-3}
+
+![](/images/A16A0288.jpg){.profile-img}
+
+:::
+
+::: {.g-col-12 .g-col-md-7}
+
+# {{< animate shakeX "Hi, I'm Vuyo Mbam!" delay=0.2s repeat=3 >}}
+
+### Energy Sector Analyst & Advisor
+Energy systems modelling, economic analysis, and data-driven policy insights focused on power sector transitions.
+
+:::
+
+:::
+
+::: {.plot-section}
+
+```{python}
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+
+# ---------------------------
+# Import data and format
+data = pd.read_csv("posts\sa_energy_balance\eb_2023.csv").set_index("Flow")
+df = data.loc[:, "Coal":].astype("float").reset_index()
+
+# --------- Define fuels, and flows ---------------
+
+fuels = ['Coal', 'Crude oil', 'Oil products', 'Natural gas', 'Nuclear', 'Hydro', 'Geo-therm., Solar etc.',
+        'Biofuels and Waste', 'Electricity', 'Heat']
+primary_flows = ['Production', 'Imports']
+transformation_flows = ['Electricity plants', 'CHP plants', 'Heat plants',
+                        'Blast furnaces', 'Gas works', 'Coke/pat. fuel/BKB/PB plants',
+                        'Oil refineries', 'Petrochemical plants', 'Liquefaction plants',
+                        'Other transformation', 
+                        'Losses']
+final_flows = ['INDUSTRY', 'TRANSPORT', 'OTHER', 'Energy industry own use','NON-ENERGY USE', 'Exports', 'Intl. marine bunkers', 
+                 'Intl. aviation bunkers']
+
+
+
+# --------- Define Colors ---------------
+
+fuel_colors = {
+    'Coal': '#4B4B4B',            # dark grey
+    'Crude oil': '#A0522D',       # brown
+    'Oil products': '#FFA500',    # orange
+    'Natural gas': '#89a5c0',     # grey
+    'Nuclear': '#9A32CD',         # purple
+    'Hydro': '#00BFFF',           # light blue
+    'Geo-therm., Solar etc.': '#228B22',  # green
+    'Biofuels and Waste': '#FFD700',   # yellow
+    'Electricity': '#0202E0',     # blue
+    'Heat': '#FF6347'             # tomato
+}
+
+def hex_to_rgba(hex_color, alpha=0.6):
+    hex_color = hex_color.lstrip('#')
+    r, g, b = tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+    return f"rgba({r},{g},{b},{alpha})"
+
+def get_link_color(source, target):
+    if source in fuel_colors:
+        return hex_to_rgba(fuel_colors[source], 0.5)
+    elif target in fuel_colors:
+        return hex_to_rgba(fuel_colors[target], 0.5)
+    else:
+        return "rgba(180,180,180,0.3)"
+
+x_pos = {}
+for n in primary_flows:
+    x_pos[n] = 0.05           # far left
+for n in fuels:
+    x_pos[n] = 0.30           # mid-left
+for n in transformation_flows:
+    x_pos[n] = 0.60           # mid-right
+for n in final_flows:
+    x_pos[n] = 0.85           # far right
+    
+import numpy as np
+
+y_pos = {}
+def distribute_y(group, start=0.05, end=0.95):
+    spacing = np.linspace(start, end, len(group))
+    for n, y in zip(group, spacing):
+        y_pos[n] = y
+
+links = []
+
+
+# Primary flows
+for flow in primary_flows:
+    for fuel in fuels:
+        val = df.loc[df['Flow'] == flow, fuel].values[0]
+        if val > 0:
+            links.append((flow, fuel, abs(val)))
+        if val < 0:
+            links.append((fuel, flow, abs(val)))
+
+# 2. Transformation flows
+
+
+for flow in transformation_flows:
+    for fuel in fuels:
+        val = df.loc[df['Flow'] == flow, fuel].values[0]
+        if val > 0:
+            links.append((flow, fuel, abs(val)))
+        if val < 0:
+            links.append((fuel, flow, abs(val)))
+            
+
+# 3. Final flows
+for flow in final_flows:
+    for fuel in fuels:
+        val = df.loc[df['Flow'] == flow, fuel].values[0]
+        if val > 0:
+            links.append((fuel, flow, abs(val)))
+        if val < 0:
+            links.append((fuel, flow, abs(val)))
+
+
+# --- Optional filtering to declutter ---
+
+link_colors = [get_link_color(s, t) for s, t, _ in links]
+# total = sum([v for _, _, v in links])
+# links = [(s, t, v) for s, t, v in links if v > 0.005 * total]
+
+# nodes = list(dict.fromkeys(primary_flows + fuels + transformation_flows + final_flows))
+nodes = primary_flows + fuels + transformation_flows + final_flows
+used_nodes = set([s for s, _, _ in links] + [t for _, t, _ in links])
+nodes = [n for n in nodes if n in used_nodes]
+node_indices = {node: i for i, node in enumerate(nodes)}
+
+sources, targets, values = zip(*links)
+
+node_colors = []
+for n in nodes:
+    if n in fuel_colors:
+        node_colors.append(fuel_colors[n])
+    elif n in primary_flows:
+        node_colors.append("#CCCCCC")
+    elif n in transformation_flows:
+        node_colors.append("#87CEEB")
+    elif n in final_flows:
+        node_colors.append("#F4A460")
+    else:
+        node_colors.append("#D3D3D3")
+
+distribute_y(primary_flows)
+distribute_y(fuels)
+distribute_y(transformation_flows)
+distribute_y(final_flows)
+
+fig = go.Figure(data=[go.Sankey(
+    arrangement = 'snap',
+    node=dict(
+        pad=20,
+        thickness=15,
+        label=nodes,
+        color= node_colors,
+        x=[x_pos[n] for n in nodes],
+        y=[y_pos[n] for n in nodes]
+    ),
+    link=dict(
+        source=[node_indices[s] for s in sources],
+        target=[node_indices[t] for t in targets],
+        value=values,
+        # color="rgba(0,150,250,0.4)"
+        color=link_colors
+    )
+)])
+
+# fig.update_layout(title_text="South Africa Energy Balance - 2023", font_size=10)
+fig.update_layout(
+    title_text="South Africa Energy Balance - 2023",
+    title=dict(x=0, font=dict(color = "white", size=22)),
+    font=dict(color = "white", size=11),
+    # font_size=11,
+    annotations=[
+        dict(
+            text="<i>Source: Vuyo Mbam based on South Africa Energy Balance 2023 (IEA, DMRE)</i>",
+            xref="paper", yref="paper",
+            x=0, y=-0.12,          # position below chart
+            showarrow=False,
+            font=dict(size=10, color="white"),
+            xanchor='left',
+        )
+    ],
+    margin=dict(t=60, b=80, l=5, r=10),
+    height = 500,
+    # width = 1000,
+    paper_bgcolor="rgba(0,0,0,0)", # Transparent to match Quarto theme
+    plot_bgcolor="rgba(0,0,0,0)",
+)
+
+
+fig.show(config={'displayModeBar': False})
+
+```
+
+::: 
+
+::: {.content-block .text-center}
+
+<div class="cta-buttons">
+  <a href="https://github.com/VuyoMbam" target="_blank" class="btn btn-outline-dark btn-lg">
+    <i class="bi bi-github"></i> GitHub
+  </a>
+  <a href="https://www.linkedin.com/in/vuyo-mbam-495316184" target="_blank" class="btn btn-outline-primary btn-lg">
+    <i class="bi bi-linkedin"></i> LinkedIn
+  </a>
+</div>
+
+:::
+
+:::
+
+
+
+---
+
+# Areas of Expertise
+::: {.grid .expertise-section}
+::: {.g-col-12 .g-col-md-4 .expertise-card}
+<!-- {{< fa chart-line >}} -->
+{{< iconify mdi power-from-grid mode=sytle >}}
+
+#### Techno-economic Analysis
+Skilled in modelling performance of multiple energy technologies and financial metrics such as the NPV, IRR, and payback period to inform investment decisions and policy recommendations.
+:::
+
+::: {.g-col-12 .g-col-md-4 .expertise-card}
+{{< fa laptop-code >}}
+
+#### Programming and Data Analysis
+Highly proficient in using Python, MATLAB and VBA for advanced data analytics.
+:::
+
+::: {.g-col-12 .g-col-md-4 .expertise-card}
+{{< fa solar-panel >}}
+
+#### Energy Systems Modelling
+*content loading*
+:::
+:::
+
+---
+
+# Featured Articles
+
+::: {#featured-articles align="center"}
+:::
+
+---
+
+# Interviews
+
+::: {#featured-interviews}
+:::
+
+```{=html}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const container = document.getElementById('featured-interviews');
+
+        if (container) {
+            const links = container.querySelectorAll('a');
+            links.forEach(link => {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            });
+        }
+    });
+</script>
+```
+
+---
+
+# More about Vuyo
+
+Vuyo Mbam is a South African energy sector analyst and advisor currently working at the Council for Scientific and Industrial Research (CSIR), wherein he works in the Energy Centre under the Energy Industry research group whose focus is to support the country’s just energy transition and green industrial development. He has worked on a variety of projects that fit within the broad ambit of these two key areas of national interest, such projects include, inter alia, a Clean Cooking Roadmap that was developed for Mpumalanga province; an Offshore Wind Roadmap for South Africa; an analysis of the potential opportunities for localisation in the Solar PV and Battery Energy Storage Value Chains; and an assessment of the readiness of South Africa’s education and training ecosystem for the envisaged green hydrogen economy.
+
+::: {.text-center}
+<a href="/assets/Vuyo_Mbam_CV.pdf" class="btn btn-success btn-lg" download target="_blank">
+  <i class="bi bi-download"></i> Download my CV
+</a>
+
+:::

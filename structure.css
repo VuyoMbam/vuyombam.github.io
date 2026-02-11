@@ -1,0 +1,11 @@
+random-website/
+├── _quarto.yml
+├── site_utils/
+│   ├── __init__.py
+│   ├── plotly_theme.py
+│   └── export.py
+├── articles/
+│   ├── article-one.qmd
+│   └── article-two.qmd
+├── index.qmd
+├── articles.qmd

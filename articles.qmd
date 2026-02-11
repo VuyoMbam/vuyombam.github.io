@@ -1,0 +1,18 @@
+---
+title: Articles
+listing:
+    id: article-listing
+    contents: posts
+    type: grid
+    sort: "date-desc"
+    categories: true
+    # fields: [title, date, description, image]
+    sort-ui: false
+    filter-ui: false
+# page-layout: full
+
+format:
+    html:
+        toc: false
+---
+

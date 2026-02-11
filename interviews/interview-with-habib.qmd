@@ -1,0 +1,14 @@
+---
+title: "South Africa Just Energy Transition | Vuyo Mbam on Renewable Policy, Green Hydrogen & Offshore Wind"
+image: https://img.youtube.com/vi/SncZqKeH_Co/hqdefault.jpg
+description: "In this exclusive webinar, Vuyo Mbam, Researcher at CSIR Energy Centre, South Africa. With a strong background in renewable energy systems, offshore wind planning, and green hydrogen workforce development, Vuyo is shaping national energy policies and local industrial empowerment."
+date: 2022-02-09
+categories: [Interview]
+featured: true
+format:
+  html:
+    include-in-header:
+        text: |
+            <meta http-equiv="refresh" content="0; url=https://www.youtube.com/watch?v=SncZqKeH_Co">
+            <script type="text/javascript"> window.location.href="https://www.youtube.com/watch?v=SncZqKeH_Co" </script>
+---

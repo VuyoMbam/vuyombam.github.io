@@ -1,0 +1,63 @@
+---
+author: "Vuyo Mbam"
+title: "Modeling the Employment Impacts of Coal Plant Closures"
+date: 2025-01-15
+categories: [Energy Transition, Employment, IO Analysis]
+description: "An input–output analysis of job impacts under different coal retirement pathways."
+image: "/previews/coal-transition.png"
+featured: true
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    fig-cap-location: bottom
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+```{python}
+import sys
+from pathlib import Path
+
+# Compute project root (one level up from articles/)
+project_root = Path.cwd().parents[0]
+if str(project_root) not in sys.path:
+    sys.path.insert(0, str(project_root))
+```
+
+
+## Motivation
+
+Coal plant closures are often discussed in terms of capacity and emissions, but
+their employment impacts are poorly quantified.
+
+This article applies an input–output framework to estimate direct and indirect
+job effects under alternative retirement scenarios.
+
+## Methodology
+
+We use sectoral operating expenditure data mapped to 22 economic commodity classes.
+
+```{python}
+from site_utils import plotly_theme, export
+import plotly.express as px
+import pandas as pd
+import os
+
+df = pd.DataFrame({
+    "Year": [2025, 2030, 2035],
+    "Jobs": [12000, 8000, 3000]
+})
+
+fig = px.line(df, x="Year", y="Jobs", title="Estimated Employment Impact")
+
+export.save_preview(fig)
+
+fig.show()
+```
+
+
+
+## Results
