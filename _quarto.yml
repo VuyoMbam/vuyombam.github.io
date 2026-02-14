@@ -12,8 +12,6 @@ website:
     background: "#000000" 
     search: true
     left: 
-      - text: "Home"
-        href: index.qmd
       - text: "Articles"
         href: articles.qmd
     right: 
