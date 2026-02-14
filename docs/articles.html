@@ -129,8 +129,10 @@ window.Quarto = {
 </script>
 
 <meta property="og:title" content="Articles – Energy with Vuyo Mbam">
-<meta property="og:image" content="./previews/coal-transition.png">
+<meta property="og:image" content="https://vuyombam.github.io/previews/coal-transition.png">
 <meta property="og:site_name" content="Energy with Vuyo Mbam">
+<meta property="og:image:height" content="800">
+<meta property="og:image:width" content="800">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -424,7 +426,7 @@ Dec 31, 2025
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/vuyombam\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

@@ -7,6 +7,8 @@ website:
   title: "Energy with Vuyo Mbam"
   description: "Official website of Vuyo Mbam, an Energy Sector Analyst & Advisor providing insights on energy system transitions, energy policy, economic impacts with a particular focus on the South African market"
   open-graph: true
+  search: true
+  site-url: "https://vuyombam.github.io"
   page-navigation: true
   navbar:
     background: "#000000" 
