@@ -44,7 +44,9 @@ execute:
 # {{< animate shakeX "Hi, I'm Vuyo Mbam!" delay=0.2s repeat=3 >}}
 
 ### Energy Sector Analyst & Advisor
-Energy systems modelling, economic analysis, and data-driven policy insights focused on power sector transitions.
+<!-- Energy systems modelling, techno-economic analysis, and data-driven policy insights focused on power sector transitions. -->
+
+Experience delivering high-impact research and advisory support within South Africa’s energy sector, with a focus on the just energy transition and green industrial development. 
 
 :::
 
@@ -59,7 +61,7 @@ import plotly.graph_objects as go
 
 # ---------------------------
 # Import data and format
-data = pd.read_csv("posts\sa_energy_balance\eb_2023.csv").set_index("Flow")
+data = pd.read_csv("assets\eb_2023.csv").set_index("Flow")
 df = data.loc[:, "Coal":].astype("float").reset_index()
 
 # --------- Define fuels, and flows ---------------
@@ -264,7 +266,7 @@ fig.show(config={'displayModeBar': False})
 {{< iconify mdi power-from-grid mode=sytle >}}
 
 #### Techno-economic Analysis
-Skilled in modelling performance of multiple energy technologies and financial metrics such as the NPV, IRR, and payback period to inform investment decisions and policy recommendations.
+Skilled in modellingenergy yield performance of multiple energy technologies and discounted cashflow analysis (DCF) to investigage financial metrics such as the NPV, IRR, and payback period to inform investment decisions and policy recommendations.
 :::
 
 ::: {.g-col-12 .g-col-md-4 .expertise-card}
@@ -275,10 +277,10 @@ Highly proficient in using Python, MATLAB and VBA for advanced data analytics.
 :::
 
 ::: {.g-col-12 .g-col-md-4 .expertise-card}
-{{< fa solar-panel >}}
+{{< fa chart-line >}}
 
-#### Energy Systems Modelling
-*content loading*
+#### Macroeconomic Impact Modelling
+Development of input-output models (multiplier-based) to model macroeconomic impacts (jobs, GDP, etc.) of in energy projects throughout their operational life. 
 :::
 :::
 
