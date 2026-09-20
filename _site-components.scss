@@ -66,6 +66,29 @@ body {
     }
 }
 
+/* Light/dark toggle: a moon (switch to dark) or sun (switch to light) instead of
+   Quarto's generic on/off switch, so visitors can tell what it does. The label for
+   screen readers is set in _quarto.yml (include-in-header). */
+.quarto-color-scheme-toggle .bi::before {
+    background-image: none !important;
+    content: "\f494" !important;                  // moon
+    font-family: "bootstrap-icons" !important;
+    font-size: 1.15rem;
+    line-height: 1;
+    width: auto !important;
+    height: auto !important;
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+}
+
+.quarto-color-scheme-toggle.alternate .bi::before {
+    content: "\f5a1" !important;                  // sun
+}
+
+.quarto-color-scheme-toggle:hover .bi::before {
+    color: $aqua;
+}
+
 /* ---------- Hero ---------- */
 .profile-img {
     height: auto;

@@ -66,5 +66,21 @@ format:
             document.querySelectorAll('.js-plotly-plot').forEach(function (g) { Plotly.Plots.resize(g); });
           });
         </script>
+        <script>
+          // Name the light/dark toggle for screen readers and tooltips, and keep it in step with the mode.
+          document.addEventListener('DOMContentLoaded', function () {
+            var toggles = document.querySelectorAll('.quarto-color-scheme-toggle');
+            function update() {
+              var label = document.body.classList.contains('quarto-dark') ? 'Switch to light mode' : 'Switch to dark mode';
+              toggles.forEach(function (t) {
+                t.title = label;
+                t.setAttribute('aria-label', label);
+                t.setAttribute('role', 'button');
+              });
+            }
+            update();
+            new MutationObserver(update).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+          });
+        </script>
     toc: false
 
