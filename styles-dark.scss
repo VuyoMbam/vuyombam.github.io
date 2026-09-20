@@ -28,6 +28,10 @@ $link-hover-color: $accent-hover;
 $primary: $mint;
 $card-bg: $surface;
 $text-muted: $muted;
+$code-color: $text;   // inline code: plain text on a tinted chip (Bootstrap's default is pink/purple)
+$code-bg: rgba(230, 245, 241, 0.12);
+$callout-color-note: $accent;   // the template's "Key takeaways" box
+$callout-color-tip: $accent;
 
 $font-family-sans-serif: "Questrial", "Segoe UI", Helvetica, Arial, sans-serif;
 $font-family-base: $font-family-sans-serif;

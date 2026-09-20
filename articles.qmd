@@ -19,3 +19,14 @@ format:
         toc: false
 ---
 
+```{=html}
+<p id="no-articles" class="text-center" hidden>New articles are on the way.</p>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Shown only while the listing has no articles
+        if (!document.querySelector('.quarto-listing .quarto-grid-item')) {
+            document.getElementById('no-articles').hidden = false;
+        }
+    });
+</script>
+```

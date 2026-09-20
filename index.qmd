@@ -3,7 +3,7 @@ title: ""
 pagetitle: "Energy Sector Analyst & Advisor"
 image: images/A16A0288.jpg
 image-alt: "Portrait of Vuyo Mbam"
-description: "Vuyo Mbam is an energy sector analyst and advisor at the CSIR Energy Centre, supporting South Africa's just energy transition and green industrial development."
+description: "Energy sector analyst and advisor supporting South Africa's move to a liberalised, cost-efficient, affordable and sustainable power sector."
 open-graph:
   title: "Vuyo Mbam – Energy Sector Analyst & Advisor"
 twitter-card:
@@ -53,7 +53,7 @@ execute:
 ### Energy Sector Analyst & Advisor
 <!-- Energy systems modelling, techno-economic analysis, and data-driven policy insights focused on power sector transitions. -->
 
-Experience delivering high-impact research and advisory support within South Africa’s energy sector, with a focus on the just energy transition and green industrial development. 
+I support South Africa’s energy and power sectors in their transition towards liberalisation, cost-efficiency, affordability and sustainability.
 
 :::
 
@@ -264,10 +264,10 @@ Skilled in modelling energy yield performance of multiple energy technologies an
 :::
 
 ::: {.g-col-12 .g-col-md-4 .expertise-card}
-{{< fa laptop-code >}}
+{{< fa diagram-project >}}
 
-#### Programming and Data Analysis
-Highly proficient in using Python, MATLAB and VBA for advanced data analytics.
+#### Energy Modelling
+Long-term energy planning using capacity mix projection models, including OSeMOSYS and bespoke tools, and power system dispatch modelling, with analysis of the resulting dispatch and system marginal prices.
 :::
 
 ::: {.g-col-12 .g-col-md-4 .expertise-card}
@@ -295,6 +295,15 @@ Development of input-output models (multiplier-based) to model macroeconomic imp
 ```{=html}
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+        // Hide a section (heading and all) while its listing is empty, e.g. no article
+        // is marked `featured: true` yet. It reappears by itself once one is.
+        document.querySelectorAll('section.level1').forEach(function(section) {
+            const listing = section.querySelector('.quarto-listing');
+            if (listing && !listing.querySelector('.quarto-grid-item')) {
+                section.hidden = true;
+            }
+        });
+
         const container = document.getElementById('featured-interviews');
 
         if (container) {

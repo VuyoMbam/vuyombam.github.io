@@ -6,7 +6,6 @@ plotly>=6.0
 kaleido==0.2.1    # used by site_utils/export.py to save article preview PNGs. 0.2.1 bundles its own
                   # Chromium; kaleido 1.x needs Chrome installed and failed to start Edge here.
 matplotlib>=3.8
-statsmodels>=0.14 # only for posts/sa_steel_analysis/autos_steel_cons_perc.py
 jupyter
 nbformat
 nbclient

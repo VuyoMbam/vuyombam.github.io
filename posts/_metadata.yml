@@ -1,0 +1,20 @@
+# Defaults applied to every article in posts/. An article's own front matter
+# only needs: title, description, date, categories (and optionally image, featured).
+
+author: "Vuyo Mbam"
+
+# Readable line length with a margin column (the rest of the site is full-width)
+page-layout: article
+toc: false
+toc-depth: 2
+number-sections: false
+lightbox: auto            # click any image or chart to enlarge it
+link-external-newwindow: true
+link-external-icon: false
+fig-cap-location: bottom
+
+execute:
+  echo: false             # show results, not code
+  warning: false
+  message: false
+  freeze: auto            # only re-run code when the article changes

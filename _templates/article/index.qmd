@@ -1,0 +1,76 @@
+---
+title: "Working title of the article"
+description: "One or two sentences, about 150 characters. Shown on the article card, in Google results and in link previews."
+date: {{date}}
+categories: [Topic]
+# Optional cover image: put the file in this folder. It is used on the article card
+# and as the social-share image. About 1200 x 630 px works best.
+# image: cover.png
+# image-alt: "Describe the image for screen readers"
+featured: false       # true = also appear under "Featured Articles" on the homepage
+draft: true           # DELETE THIS LINE TO PUBLISH. While it is here the article
+                      # shows in `quarto preview` but is left out of the built site.
+# toc: true           # add a table of contents (useful for long articles)
+---
+
+<!--
+HOW TO USE THIS TEMPLATE
+  1. Replace the front matter above and the text below. Everything is already styled,
+     so just write. Delete any block you do not need.
+  2. Preview:  quarto preview posts/<this-folder>/index.qmd
+  3. Publish:  delete the `draft: true` line, then run `quarto render`, commit and push.
+  See README.md ("Writing an article") for the full workflow, and
+  _templates/article/SNIPPETS.md for image and chart snippets.
+
+STYLE NOTES
+  - The site font has one weight, so **bold** does nothing. Use headings, lists and
+    the callout below for emphasis. Italics are fine.
+  - Start sections with ## (level 2). The title above is the only level-1 heading.
+  - Do not set colours by hand: text, charts and boxes follow the light/dark theme.
+-->
+
+::: {.lead}
+An opening paragraph of one to three sentences that says what this article is about
+and why it matters.
+:::
+
+## Extract from LinkedIn
+
+Use this box when an article starts from, or quotes, one of your LinkedIn posts.
+
+::: {.linkedin-post}
+[Shared on LinkedIn · Month YYYY]{.post-source}
+
+Paste the text of the post here. Keep line breaks as blank lines between paragraphs.
+
+[View the original post on LinkedIn](https://www.linkedin.com/posts/your-post-url)
+:::
+
+## A section heading
+
+Write normally. Link to a source like [this](https://example.com). Use lists for
+key points:
+
+- First point.
+- Second point.
+- Third point.
+
+::: {.callout-note title="Key takeaways"}
+Use a callout for the one to three points a reader should remember.
+:::
+
+> A quotation or pull-quote is written like this.
+
+<!-- Images and charts: ready-to-paste snippets are in _templates/article/SNIPPETS.md -->
+
+## Tables
+
+| Item | Value | Note |
+|------|------:|------|
+| Example | 1.0 | Tables pick up the theme automatically |
+| Another | 2.5 | Align numbers right with `------:` |
+
+## Sources
+
+1. Author or organisation, *Title of the source*, year. [Link](https://example.com)
+2. Author or organisation, *Title of the source*, year. [Link](https://example.com)

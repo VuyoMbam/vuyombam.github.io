@@ -24,7 +24,9 @@ git add -A && git commit -m "..." && git push
 |---|---|
 | `_quarto.yml` | Site config: navbar, footer, metadata, `resources` |
 | `index.qmd`, `articles.qmd`, `404.qmd` | Top-level pages |
-| `posts/` | Articles (each with its data and code) |
+| `posts/` | Articles, one folder each (`posts/<slug>/index.qmd`). `posts/_metadata.yml` holds the defaults they all share |
+| `_templates/article/` | The article template and a cheat sheet of image/chart snippets. Ignored by Quarto (leading `_`), so never published |
+| `new_article.py` | Creates a new article folder from the template |
 | `interviews/` | Stub pages that redirect to YouTube; they feed the homepage listing |
 | `site_utils/` | Shared plotting theme and preview-image export |
 | `styles-light.scss`, `styles-dark.scss` | The two themes. Each only defines colour variables, then imports the shared rules |
@@ -34,6 +36,27 @@ git add -A && git commit -m "..." && git push
 | `docs/` | Rendered site (generated) |
 | `_freeze/` | Cached results of executed code; commit it |
 
+## Writing an article
+
+Articles need no formatting work: the template is already styled for both themes.
+
+```bash
+python new_article.py "Title of the article"      # creates posts/<slug>/index.qmd
+quarto preview posts/<slug>/index.qmd              # live preview while writing
+```
+
+1. Edit `posts/<slug>/index.qmd`. Fill in the front matter (`title`, `description`, `categories`; optionally `image`, `featured`), then replace the sample text. Delete any block you do not need.
+2. **Publish** by deleting the `draft: true` line, then `quarto render`, commit and push.
+
+Things to know:
+
+- **Drafts** (`draft: true`) appear in `quarto preview` but are left out of the site's listings, search and sitemap. The built site still gets an empty page at the draft's address, and **the draft's source is public in the GitHub repo**, so keep anything confidential out of drafts.
+- **LinkedIn extracts:** use the `.linkedin-post` box (in the template) and link to the original post.
+- **Images and charts:** copy from `_templates/article/SNIPPETS.md`. Charts import `site_utils`, so they follow the light/dark theme and use the palette.
+- **Homepage:** an article with `featured: true` also appears under "Featured Articles" (the two newest show). With no articles yet, that section hides itself and the Articles page says articles are on the way.
+- **Style:** the font has one weight, so `**bold**` does nothing; use headings, lists and callouts. Do not hardcode colours.
+- **Description:** about 150 characters. It appears on the article card, in Google and in link previews.
+
 ## Design system
 
 - **Themes:** light is the default; a toggle in the navbar switches to dark and remembers the choice. Palette: `#1E4038` forest, `#3C7F70` teal, `#5ABFA9` mint, `#6CE5CA` seafoam, `#78FFE1` aqua. Light uses forest text with teal links; dark uses aqua links on a deep green background. To change a colour, edit the variables at the top of `styles-light.scss` / `styles-dark.scss`.
@@ -41,7 +64,6 @@ git add -A && git commit -m "..." && git push
 - **Font:** [Questrial](https://fonts.google.com/specimen/Questrial), self-hosted from `assets/fonts/` (no requests to Google). It has a single regular weight, so bold is switched off (`$font-weight-bold: 400`, `font-synthesis: none`): build hierarchy with size and colour, and avoid `**bold**` in body text.
 - **Charts:** colours live in `site_utils/palette.py` and are chosen to read on both themes. `site_utils/plotly_theme.py` sets transparent backgrounds and leaves text colour unset; the page's CSS (`--chart-text` in the theme files, applied in `_site-components.scss`) colours chart text for the active theme. Do not hardcode `color="white"` or `"black"` in chart code. Preview PNGs (`site_utils/export.py`) are drawn on the light background.
 - **Static matplotlib images** (e.g. `functions.py`) cannot follow the toggle, so they are drawn on a light panel using `palette.teal_cmap()`.
-- `posts/sa_steel_analysis/input_output_analysis.ipynb` is an exploratory notebook: its code cells use the same palette, but its saved outputs were not regenerated.
 
 ## Things that must survive a render
 

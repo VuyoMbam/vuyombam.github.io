@@ -211,6 +211,47 @@ iconify-icon {
     margin-bottom: 1rem;
 }
 
+/* ---------- Articles (see _templates/article/index.qmd) ---------- */
+.lead {
+    font-size: 1.25rem;
+    color: $text;
+}
+
+// Extract of a LinkedIn post
+.linkedin-post {
+    background: $surface;
+    border: 1px solid $border;
+    border-left: 4px solid $accent;
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.75rem 0;
+}
+
+.linkedin-post .post-source {
+    display: block;
+    color: $muted;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.linkedin-post p:last-child {
+    margin-bottom: 0;
+}
+
+blockquote,
+.blockquote {
+    border-left: 4px solid $accent;
+    padding-left: 1rem;
+    color: $text;
+}
+
+figcaption,
+.figure-caption {
+    color: $muted;
+}
+
 /* ---------- Charts ----------
    Plotly figures are drawn once and shown in both themes, so their text takes
    its colour from the page. Marks keep their own (mid-tone) colours.
