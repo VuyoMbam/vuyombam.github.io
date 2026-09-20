@@ -3,7 +3,7 @@ title: ""
 pagetitle: "Energy Sector Analyst & Advisor"
 image: images/A16A0288.jpg
 image-alt: "Portrait of Vuyo Mbam"
-description: "Energy sector analyst and advisor supporting South Africa's move to a liberalised, cost-efficient, affordable and sustainable power sector."
+description: "Energy sector analyst and advisor supporting South Africa's move to a liberalised, cost-efficient, affordable and sustainable energy sector."
 open-graph:
   title: "Vuyo Mbam – Energy Sector Analyst & Advisor"
 twitter-card:
@@ -53,7 +53,9 @@ execute:
 ### Energy Sector Analyst & Advisor
 <!-- Energy systems modelling, techno-economic analysis, and data-driven policy insights focused on power sector transitions. -->
 
-I support South Africa’s energy and power sectors in their transition towards liberalisation, cost-efficiency, affordability and sustainability.
+I support South Africa’s energy sector in its transition towards liberalisation, cost-efficiency, affordability and sustainability.
+
+[Get in touch](#contact){.btn .btn-success .btn-lg .hero-cta}
 
 :::
 
@@ -266,8 +268,8 @@ Skilled in modelling energy yield performance of multiple energy technologies an
 ::: {.g-col-12 .g-col-md-4 .expertise-card}
 {{< fa diagram-project >}}
 
-#### Energy Modelling
-Long-term energy planning using capacity mix projection models, including OSeMOSYS and bespoke tools, and power system dispatch modelling, with analysis of the resulting dispatch and system marginal prices.
+#### Energy System Modelling
+Long-term energy system planning using capacity mix projection models, including OSeMOSYS and bespoke tools, and power system dispatch modelling, with analysis of the resulting dispatch and system marginal prices.
 :::
 
 ::: {.g-col-12 .g-col-md-4 .expertise-card}
@@ -319,13 +321,114 @@ Development of input-output models (multiplier-based) to model macroeconomic imp
 
 ---
 
-# More about Vuyo
+# More about Me
 
-Vuyo Mbam is a South African energy sector analyst and advisor currently working at the Council for Scientific and Industrial Research (CSIR), wherein he works in the Energy Centre under the Energy Industry research group whose focus is to support the country’s just energy transition and green industrial development. He has worked on a variety of projects that fit within the broad ambit of these two key areas of national interest, such projects include, inter alia, a Clean Cooking Roadmap that was developed for Mpumalanga province; an Offshore Wind Roadmap for South Africa; an analysis of the potential opportunities for localisation in the Solar PV and Battery Energy Storage Value Chains; and an assessment of the readiness of South Africa’s education and training ecosystem for the envisaged green hydrogen economy.
+I am an energy sector analyst and advisor at Kuungana Advisory Limited, where I lead workstreams on energy system modelling for South Africa and other countries in the Southern African Power Pool (SAPP). I combine technical and financial modelling to turn complex analysis into clear insights that inform transactions, route-to-market strategies and investment decisions for project developers, power traders, utilities and financial institutions. I also contribute to energy policy and regulation projects in SAPP member countries and beyond, mostly in low- and middle-income countries.
 
-::: {.text-center}
-<a href="/assets/Vuyo_Mbam_CV.pdf" class="btn btn-success btn-lg" download target="_blank">
-  <i class="bi bi-download"></i> Download my CV
-</a>
+Previously, I was an energy economist at the Council for Scientific and Industrial Research (CSIR), where my projects included:
 
+- a Clean Cooking Roadmap for Mpumalanga province
+- an Offshore Wind Roadmap for South Africa
+- an analysis of localisation opportunities in the solar PV and battery energy storage value chains
+- an assessment of how ready South Africa's education and training ecosystem is for a green hydrogen economy
+
+---
+
+# Get in touch {#contact}
+
+::: {.contact-intro}
+Have a role, a project or a question? Send me a message and I will get back to you. You can also ask me for my CV here.
 :::
+
+```{=html}
+<div class="contact-wrap">
+  <!-- The form stays hidden until an access key is set below (see README, "Contact form"). -->
+  <form id="contact-form" class="contact-form" method="POST" action="https://api.web3forms.com/submit"
+        data-access-key="PASTE_YOUR_WEB3FORMS_ACCESS_KEY_HERE" hidden>
+    <input type="hidden" name="access_key" value="">
+    <input type="hidden" name="from_name" value="Website contact form">
+    <input type="hidden" name="subject" value="Website enquiry">
+    <!-- Spam trap: people never see or tick this; bots often do. -->
+    <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+    <div class="grid">
+      <div class="g-col-12 g-col-md-6">
+        <label for="cf-name" class="form-label">Name</label>
+        <input id="cf-name" name="name" class="form-control" required autocomplete="name">
+      </div>
+      <div class="g-col-12 g-col-md-6">
+        <label for="cf-email" class="form-label">Email</label>
+        <input id="cf-email" name="email" type="email" class="form-control" required autocomplete="email">
+      </div>
+      <div class="g-col-12 g-col-md-6">
+        <label for="cf-org" class="form-label">Organisation <span class="contact-optional">(optional)</span></label>
+        <input id="cf-org" name="organisation" class="form-control" autocomplete="organization">
+      </div>
+      <div class="g-col-12 g-col-md-6">
+        <label for="cf-topic" class="form-label">I am getting in touch about</label>
+        <select id="cf-topic" name="topic" class="form-select">
+          <option>A job opportunity</option>
+          <option>Requesting your CV</option>
+          <option>Consulting or collaboration</option>
+          <option>Speaking or an interview</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="g-col-12">
+        <label for="cf-message" class="form-label">Message</label>
+        <textarea id="cf-message" name="message" rows="6" class="form-control" required></textarea>
+      </div>
+      <div class="g-col-12 contact-actions">
+        <button type="submit" class="btn btn-success btn-lg">Send message</button>
+        <span id="cf-status" class="contact-status" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+    <p class="contact-note">Your message is sent to me through Web3Forms, a form-relay service. I will only use your details to reply.</p>
+  </form>
+  <p class="contact-fallback">Prefer email? Write to <a id="cf-mail" href="#">vuyombam69 [at] gmail [dot] com</a></p>
+</div>
+<script>
+    // The address is assembled here so it never appears in the page source for scrapers.
+    const CONTACT_EMAIL = ["vuyombam69", "gmail.com"].join("@");
+
+    function initContactForm(form) {
+        const key = form.dataset.accessKey;
+        if (!key || key.startsWith("PASTE")) return;      // not configured: keep the form hidden
+        form.hidden = false;
+        form.querySelector('[name="access_key"]').value = key;
+
+        const status = document.getElementById("cf-status");
+        const button = form.querySelector('button[type="submit"]');
+        const say = (msg) => { status.textContent = msg; };
+
+        form.addEventListener("submit", async function (event) {
+            event.preventDefault();
+            const data = Object.fromEntries(new FormData(form));
+            data.subject = "Website enquiry: " + data.topic + " (" + data.name + ")";
+            button.disabled = true;
+            say("Sending...");
+            try {
+                const response = await fetch(form.action, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                if (!response.ok || !result.success) throw new Error(result.message || "Request failed");
+                form.reset();
+                say("Sent. Thank you, I will get back to you soon.");
+            } catch (error) {
+                say("Not sent. Please email me directly at " + CONTACT_EMAIL + ".");
+            } finally {
+                button.disabled = false;
+            }
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const mail = document.getElementById("cf-mail");
+        mail.href = "mailto:" + CONTACT_EMAIL;
+        mail.textContent = CONTACT_EMAIL;
+        initContactForm(document.getElementById("contact-form"));
+    });
+</script>
+```

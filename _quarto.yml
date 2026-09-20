@@ -27,10 +27,9 @@ website:
       - text: "Articles"
         href: articles.qmd
     right: 
-      - icon: file-earmark-pdf
-        text: "Resume"
-        href: /assets/Vuyo_Mbam_CV.pdf
-        target: _blank
+      - icon: envelope
+        text: "Contact"
+        href: index.qmd#contact
       - icon: linkedin
         href: https://www.linkedin.com/in/vuyo-mbam-495316184/
         aria-label: LinkedIn

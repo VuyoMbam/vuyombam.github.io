@@ -31,7 +31,7 @@ git add -A && git commit -m "..." && git push
 | `site_utils/` | Shared plotting theme and preview-image export |
 | `styles-light.scss`, `styles-dark.scss` | The two themes. Each only defines colour variables, then imports the shared rules |
 | `_site-components.scss` | Shared component styling (navbar, cards, buttons, chart text). Uses the theme variables, so no colours are hardcoded here |
-| `assets/` | CV PDF, data for the homepage chart, and `fonts/` (self-hosted Questrial + its OFL licence) |
+| `assets/` | Data for the homepage chart, and `fonts/` (self-hosted Questrial + its OFL licence) |
 | `images/`, `previews/` | Photos and article preview images |
 | `docs/` | Rendered site (generated) |
 | `_freeze/` | Cached results of executed code; commit it |
@@ -56,6 +56,20 @@ Things to know:
 - **Homepage:** an article with `featured: true` also appears under "Featured Articles" (the two newest show). With no articles yet, that section hides itself and the Articles page says articles are on the way.
 - **Style:** the font has one weight, so `**bold**` does nothing; use headings, lists and callouts. Do not hardcode colours.
 - **Description:** about 150 characters. It appears on the article card, in Google and in link previews.
+
+## Contact form
+
+The homepage ends with a "Get in touch" form. GitHub Pages has no server, so the form sends its message through [Web3Forms](https://web3forms.com), which emails it to you. There is also a plain email link next to it as a fallback.
+
+**One-time setup:**
+
+1. Go to web3forms.com and request an access key for the inbox that should receive messages. The key is designed to be public, so it is safe to keep in the repo.
+2. In `index.qmd`, replace `PASTE_YOUR_WEB3FORMS_ACCESS_KEY_HERE` in the form's `data-access-key` attribute with the key.
+3. `quarto render`, commit and push. Then send yourself a test message and check your spam folder.
+
+Until a key is set, the form stays hidden and visitors only see the email link. The address for that link is set in the script at the bottom of the contact section (`CONTACT_EMAIL`); it is assembled in JavaScript so it does not appear in the page source for scrapers. If the form service is ever down or the send fails, the page tells the visitor to email you directly.
+
+The topic dropdown ("A job opportunity", "Requesting your CV", ...) is included in the email subject, so you can triage at a glance. The CV is no longer downloadable from the site; people ask for it here.
 
 ## Design system
 
