@@ -344,7 +344,7 @@ Have a role, a project or a question? Send me a message and I will get back to y
 <div class="contact-wrap">
   <!-- The form stays hidden until an access key is set below (see README, "Contact form"). -->
   <form id="contact-form" class="contact-form" method="POST" action="https://api.web3forms.com/submit"
-        data-access-key="PASTE_YOUR_WEB3FORMS_ACCESS_KEY_HERE" hidden>
+        data-access-key="93f644c7-29f4-4819-b6d9-af7de5de0ed7" hidden>
     <input type="hidden" name="access_key" value="">
     <input type="hidden" name="from_name" value="Website contact form">
     <input type="hidden" name="subject" value="Website enquiry">
