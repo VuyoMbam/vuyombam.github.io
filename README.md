@@ -96,6 +96,7 @@ The topic dropdown ("A job opportunity", "Requesting your CV", ...) is included 
 - **Contrast:** every text/background pair is meant to reach 4.5:1 (3:1 for large text and chart marks). Re-check after changing colours; several palette colours (mint, seafoam, aqua) fail as text on the light theme and are only used as fills or on the dark theme.
 - **Font:** [Questrial](https://fonts.google.com/specimen/Questrial), self-hosted from `assets/fonts/` (no requests to Google). It has a single regular weight, so bold is switched off (`$font-weight-bold: 400`, `font-synthesis: none`): build hierarchy with size and colour, and avoid `**bold**` in body text.
 - **Charts:** colours live in `site_utils/palette.py` and are chosen to read on both themes. `site_utils/plotly_theme.py` sets transparent backgrounds and leaves text colour unset; the page's CSS (`--chart-text` in the theme files, applied in `_site-components.scss`) colours chart text for the active theme. Do not hardcode `color="white"` or `"black"` in chart code. Preview PNGs (`site_utils/export.py`) are drawn on the light background.
+- **Showing a chart:** call `charts.show(fig)` (from `site_utils`), never `fig.show()`. Quarto's default Plotly output loads plotly.js, requirejs and MathJax from public CDNs (MathJax without an integrity check); `charts.show` loads plotly.js from `assets/vendor/` on this site instead. After upgrading the `plotly` package, refresh that file: `python -c "from site_utils import charts; print(charts.vendor_plotlyjs())"`.
 - **Static matplotlib images** (e.g. `functions.py`) cannot follow the toggle, so they are drawn on a light panel using `palette.teal_cmap()`.
 
 ## Things that must survive a render
@@ -108,3 +109,13 @@ Quarto wipes `docs/`, so files that have to be present in the output live in the
 ## Updating the footer year
 
 The footer year range is set in `_quarto.yml` (`page-footer`).
+
+## Security and privacy notes
+
+The site is static (no server, no logins), and the repository is public, so:
+
+- **Nothing secret goes in the repo.** The Web3Forms key is public by design; everything else on the site is already public. Keep drafts free of anything confidential, since their source is visible on GitHub even while they are hidden from the site.
+- **No third-party requests.** Pages load fonts, plotly.js, icons and thumbnails from this site, with no CDNs or analytics (verified in a browser). Keep it that way: use `charts.show()` for charts, copy images and icons into the repo, and avoid embeds. If a new feature needs an outside service, update `privacy.qmd`.
+- **Links that open a new tab** get `rel="noopener noreferrer"` automatically (script in `_quarto.yml`).
+- **Never commit** personal documents (CVs with phone numbers or referees), licensed datasets, or build folders (`.quarto/`, `_site/`). `.gitignore` covers the build folders.
+- **GitHub account:** use a passkey or authenticator 2FA on GitHub and on the email address it uses, and keep "Keep my email addresses private" on so commits carry the no-reply address.

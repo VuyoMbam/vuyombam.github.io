@@ -8,6 +8,7 @@ project:
     - googlecf6de51e88026b7b.html
     - robots.txt
     - assets/fonts/*
+    - assets/vendor/*      # plotly.js, served from this site (see site_utils/charts.py)
     # Favicon and app icons (must sit at the site root so browsers and Google find them)
     - favicon.svg
     - favicon.ico
@@ -42,15 +43,17 @@ website:
         href: https://www.linkedin.com/in/vuyo-mbam-495316184/
         aria-label: LinkedIn
         target: _blank
+        rel: "noopener noreferrer"
       - icon: github
         href: https://github.com/VuyoMbam
         aria-label: Github
         target: _blank
+        rel: "noopener noreferrer"
     toggle-position: right
     pinned: true
 
   page-footer: 
-    center: "© 2025–2026, Vuyo Mbam"
+    center: "© 2025–2026, Vuyo Mbam · [Privacy](/privacy.qmd)"
 
 
       
@@ -58,6 +61,7 @@ format:
   html: 
     anchor-sections: false
     canonical-url: true
+    html-math-method: mathml     # the site has no maths; this stops Quarto loading MathJax from a CDN
     page-layout: full
     # Light is the default; the navbar toggle switches to dark and remembers the choice.
     theme:
@@ -68,6 +72,16 @@ format:
       text: |
         <link rel="preload" href="/assets/fonts/Questrial-latin.woff2" as="font" type="font/woff2" crossorigin>
         <script>document.documentElement.classList.add('js');</script>
+        <script>
+          // Links that open a new tab must not hand the new page a handle on this one.
+          document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('a[target="_blank"]').forEach(function (a) {
+              var rel = (a.getAttribute('rel') || '').split(/\s+/).filter(Boolean);
+              ['noopener', 'noreferrer'].forEach(function (r) { if (rel.indexOf(r) < 0) rel.push(r); });
+              a.setAttribute('rel', rel.join(' '));
+            });
+          });
+        </script>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml">
         <link rel="icon" href="/favicon.ico" sizes="48x48">
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">

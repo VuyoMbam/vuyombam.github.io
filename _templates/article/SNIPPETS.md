@@ -24,12 +24,12 @@ import os, sys
 sys.path.insert(0, os.environ["QUARTO_PROJECT_DIR"])   # lets the article import site_utils
 import pandas as pd
 import plotly.express as px
-from site_utils import palette, plotly_theme            # registers the site's chart theme
+from site_utils import charts, palette, plotly_theme    # plotly_theme registers the site's chart theme
 
 df = pd.read_csv("data.csv")
 fig = px.bar(df, x="year", y="value", color="technology",
              color_discrete_sequence=palette.CATEGORICAL)
-fig.show()
+charts.show(fig)                                          # use this, not fig.show()
 ```
 ````
 
@@ -45,7 +45,7 @@ Charts are fixed-width unless you leave `width` unset. Leave it unset so they fi
 
 ## Social-share image made from a chart
 
-After `fig.show()`, add:
+After `charts.show(fig)`, add:
 
 ```python
 from site_utils import export

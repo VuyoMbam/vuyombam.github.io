@@ -1,0 +1,39 @@
+---
+title: "Privacy"
+description: "What this website does and does not do with your information."
+page-layout: article
+toc: false
+search: false
+---
+
+This page explains, in plain language, what happens to information when you visit this site or send me a message. It is a personal website, so there is very little.
+
+## What this site does not do
+
+- It sets **no cookies**.
+- It has **no analytics, advertising or tracking scripts**.
+- It does not ask you to create an account.
+
+## What it stores in your browser
+
+If you switch between light and dark mode, your choice is saved in your browser's local storage so the site remembers it. It never leaves your device and I cannot see it.
+
+## Hosting
+
+The site is hosted on GitHub Pages. GitHub, as the host, may keep technical logs such as your IP address when you load a page. I do not see those logs. See [GitHub's privacy statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) for how GitHub handles them.
+
+## Other services your browser contacts
+
+Everything the pages need (fonts, charts, icons, images and code) is served from this site itself. Your browser does not contact any advertising, analytics or content-delivery services when you load a page.
+
+Links to LinkedIn, GitHub and YouTube only contact those sites if you click them.
+
+## The contact form
+
+If you use the form on the [home page](index.html#contact), the name, email address, organisation, topic and message you type are sent to me through **Web3Forms**, a form-relay service that forwards them to my email inbox. I use your details only to reply to you, and I do not share them or add you to any list. Please do not send anything sensitive through the form. If you would rather not use it, you can email me at the address shown under the form.
+
+## Your rights
+
+If you have sent me a message, you can ask me what I hold about you, ask me to correct it, or ask me to delete it. Use the [contact form](index.html#contact) or the email address on the home page.
+
+*Last updated: September 2026.*

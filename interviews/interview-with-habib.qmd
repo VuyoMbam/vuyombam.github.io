@@ -1,6 +1,6 @@
 ---
 title: "South Africa Just Energy Transition | Vuyo Mbam on Renewable Policy, Green Hydrogen & Offshore Wind"
-image: https://img.youtube.com/vi/SncZqKeH_Co/hqdefault.jpg
+image: /images/interviews/interview-with-habib.jpg
 description: "In this webinar, Vuyo Mbam discusses South Africa's just energy transition, renewable energy policy, green hydrogen workforce development and offshore wind planning."
 date: 2022-02-09
 categories: [Interview]

@@ -69,7 +69,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 # Registers the site's Plotly template; colours live in site_utils/palette.py
-from site_utils import palette, plotly_theme
+from site_utils import charts, palette, plotly_theme
 
 # ---------------------------
 # Import data and format
@@ -230,7 +230,8 @@ fig.update_layout(
 )
 
 
-fig.show(config={'displayModeBar': False})
+# charts.show loads plotly.js from this site, with no third-party requests (see site_utils/charts.py)
+charts.show(fig, config={'displayModeBar': False})
 
 ```
 
@@ -239,10 +240,10 @@ fig.show(config={'displayModeBar': False})
 ::: {.content-block .text-center}
 
 <div class="cta-buttons">
-  <a href="https://github.com/VuyoMbam" target="_blank" class="btn btn-outline-dark btn-lg">
+  <a href="https://github.com/VuyoMbam" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-lg">
     <i class="bi bi-github"></i> GitHub
   </a>
-  <a href="https://www.linkedin.com/in/vuyo-mbam-495316184" target="_blank" class="btn btn-outline-primary btn-lg">
+  <a href="https://www.linkedin.com/in/vuyo-mbam-495316184" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-lg">
     <i class="bi bi-linkedin"></i> LinkedIn
   </a>
 </div>
@@ -259,7 +260,10 @@ fig.show(config={'displayModeBar': False})
 ::: {.grid .expertise-section}
 ::: {.g-col-12 .g-col-md-4 .expertise-card}
 <!-- {{< fa chart-line >}} -->
-{{< iconify mdi power-from-grid >}}
+```{=html}
+<!-- Material Design Icons "power-from-grid" (Pictogrammers), inlined so no icon service is called at runtime -->
+<svg class="expertise-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="m5.18 5.45l-1.78-.9L4.66 2h8.47l1.27 2.55l-1.78.89L11.9 4h-6zM15.5 8H11l-.8-3H7.6l-.79 3H2.28L1 10.55l1.79.89L3.5 10h10.78l.72 1.45l1.79-.89zm-.83 14H12.6l-.24-.9l-3.46-5.2l-3.47 5.2l-.23.9H3.13L6 11h2.09l-.36 1.35L8.9 14.1l1.16-1.75L9.71 11h2.07zM8.3 15l-.9-1.35l-1.18 4.48zm3.28 3.12l-1.18-4.48L9.5 15zM23 16l-4-4v3h-4v2h4v3z"/></svg>
+```
 
 #### Techno-economic Analysis
 Skilled in modelling energy yield performance of multiple energy technologies and discounted cashflow analysis (DCF) to investigate financial metrics such as the NPV, IRR, and payback period to inform investment decisions and policy recommendations.
@@ -424,7 +428,7 @@ Have a role, a project or a question? Send me a message and I will get back to y
         <span id="cf-status" class="contact-status" role="status" aria-live="polite"></span>
       </div>
     </div>
-    <p class="contact-note">Your message is sent to me through Web3Forms, a form-relay service. I will only use your details to reply.</p>
+    <p class="contact-note">Your message is sent to me through Web3Forms, a form-relay service. I will only use your details to reply. See the <a href="privacy.html">privacy notice</a>.</p>
   </form>
   <p class="contact-fallback">Prefer email? Write to <a id="cf-mail" href="#">vuyombam69 [at] gmail [dot] com</a></p>
 </div>

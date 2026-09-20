@@ -201,12 +201,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ---------- Expertise cards ---------- */
-.expertise-card i,
-iconify-icon {
+.expertise-card i {
     font-size: 3rem;
     color: $accent;
     margin-bottom: 1rem;
     display: block;
+}
+
+// Inline SVG icon (same size and colour as the Font Awesome icons beside it)
+.expertise-icon {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto 1rem;
+    color: $accent;
 }
 
 .expertise-card {
@@ -224,7 +232,7 @@ iconify-icon {
 }
 
 .expertise-card:hover i,
-.expertise-card:hover iconify-icon {
+.expertise-card:hover .expertise-icon {
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
