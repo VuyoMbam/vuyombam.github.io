@@ -1,13 +1,13 @@
 [
   {
+    "listing": "/articles.html",
+    "items": []
+  },
+  {
     "listing": "/index.html",
     "items": [
       "/interviews/cranfield-interview.html",
       "/interviews/interview-with-habib.html"
     ]
-  },
-  {
-    "listing": "/articles.html",
-    "items": []
   }
 ]
