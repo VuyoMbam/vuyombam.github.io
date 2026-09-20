@@ -1,0 +1,12 @@
+{
+  "name": "Energy with Vuyo Mbam",
+  "short_name": "Vuyo Mbam",
+  "start_url": "/",
+  "display": "browser",
+  "theme_color": "#1E4038",
+  "background_color": "#F7FCFA",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
