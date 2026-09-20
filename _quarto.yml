@@ -8,6 +8,13 @@ project:
     - googlecf6de51e88026b7b.html
     - robots.txt
     - assets/fonts/*
+    # Favicon and app icons (must sit at the site root so browsers and Google find them)
+    - favicon.svg
+    - favicon.ico
+    - apple-touch-icon.png
+    - icon-192.png
+    - icon-512.png
+    - site.webmanifest
 
 
 website: 
@@ -61,6 +68,11 @@ format:
       text: |
         <link rel="preload" href="/assets/fonts/Questrial-latin.woff2" as="font" type="font/woff2" crossorigin>
         <script>document.documentElement.classList.add('js');</script>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+        <link rel="icon" href="/favicon.ico" sizes="48x48">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <meta name="theme-color" content="#1E4038">
         <script>
           // Plotly measures text when it draws; redraw once Questrial has loaded so labels fit.
           document.fonts && document.fonts.ready.then(function () {
