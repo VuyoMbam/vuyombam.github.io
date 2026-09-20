@@ -1,2 +1,9 @@
+# Quarto caches and scratch output (docs/ is the published site and IS tracked)
 /.quarto/
+/_site/
+**/_site/
 **/*.quarto_ipynb
+
+# Python
+__pycache__/
+*.pyc
