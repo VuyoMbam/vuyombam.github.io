@@ -66,6 +66,9 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
+# Registers the site's Plotly template; colours live in site_utils/palette.py
+from site_utils import palette, plotly_theme
+
 # ---------------------------
 # Import data and format
 data = pd.read_csv("assets/eb_2023.csv").set_index("Flow")
@@ -88,23 +91,8 @@ final_flows = ['INDUSTRY', 'TRANSPORT', 'OTHER', 'Energy industry own use','NON-
 
 # --------- Define Colors ---------------
 
-fuel_colors = {
-    'Coal': '#4B4B4B',            # dark grey
-    'Crude oil': '#A0522D',       # brown
-    'Oil products': '#FFA500',    # orange
-    'Natural gas': '#89a5c0',     # grey
-    'Nuclear': '#9A32CD',         # purple
-    'Hydro': '#00BFFF',           # light blue
-    'Geo-therm., Solar etc.': '#228B22',  # green
-    'Biofuels and Waste': '#FFD700',   # yellow
-    'Electricity': '#0202E0',     # blue
-    'Heat': '#FF6347'             # tomato
-}
-
-def hex_to_rgba(hex_color, alpha=0.6):
-    hex_color = hex_color.lstrip('#')
-    r, g, b = tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
-    return f"rgba({r},{g},{b},{alpha})"
+fuel_colors = palette.FUEL_COLORS
+hex_to_rgba = palette.hex_to_rgba
 
 def get_link_color(source, target):
     if source in fuel_colors:
@@ -112,7 +100,7 @@ def get_link_color(source, target):
     elif target in fuel_colors:
         return hex_to_rgba(fuel_colors[target], 0.5)
     else:
-        return "rgba(180,180,180,0.3)"
+        return hex_to_rgba(palette.NEUTRAL, 0.3)
 
 x_pos = {}
 for n in primary_flows:
@@ -185,13 +173,13 @@ for n in nodes:
     if n in fuel_colors:
         node_colors.append(fuel_colors[n])
     elif n in primary_flows:
-        node_colors.append("#CCCCCC")
+        node_colors.append(palette.NODE_PRIMARY)
     elif n in transformation_flows:
-        node_colors.append("#87CEEB")
+        node_colors.append(palette.NODE_TRANSFORMATION)
     elif n in final_flows:
-        node_colors.append("#F4A460")
+        node_colors.append(palette.NODE_FINAL)
     else:
-        node_colors.append("#D3D3D3")
+        node_colors.append(palette.NEUTRAL)
 
 distribute_y(primary_flows)
 distribute_y(fuels)
@@ -220,8 +208,9 @@ fig = go.Figure(data=[go.Sankey(
 # fig.update_layout(title_text="South Africa Energy Balance - 2023", font_size=10)
 fig.update_layout(
     title_text="South Africa Energy Balance - 2023",
-    title=dict(x=0, font=dict(color = "white", size=22)),
-    font=dict(color = "white", size=11),
+    # Text colour is supplied by the page's CSS so it follows the light/dark theme
+    title=dict(x=0, font=dict(size=22)),
+    font=dict(size=11),
     # font_size=11,
     annotations=[
         dict(
@@ -229,15 +218,13 @@ fig.update_layout(
             xref="paper", yref="paper",
             x=0, y=-0.12,          # position below chart
             showarrow=False,
-            font=dict(size=10, color="white"),
+            font=dict(size=10),
             xanchor='left',
         )
     ],
     margin=dict(t=60, b=80, l=5, r=10),
     height = 500,
     # width = 1000,
-    paper_bgcolor="rgba(0,0,0,0)", # Transparent to match Quarto theme
-    plot_bgcolor="rgba(0,0,0,0)",
 )
 
 

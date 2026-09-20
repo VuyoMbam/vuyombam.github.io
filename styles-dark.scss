@@ -1,0 +1,45 @@
+/*-- scss:defaults --*/
+// Brand palette (see site_utils/palette.py for the chart equivalents)
+$forest:  #1E4038;
+$teal:    #3C7F70;
+$mint:    #5ABFA9;
+$seafoam: #6CE5CA;
+$aqua:    #78FFE1;
+
+// Roles that differ between the light and dark themes
+$page-bg:      #0B1512;
+$surface:      #12241F;
+$text:         #E6F5F1;
+$muted:        #9DB8B0;
+$accent:       $mint;      // icons, borders, fills
+$accent-text:  $aqua;      // links, headings (15:1 on $page-bg)
+$accent-hover: $seafoam;
+$border:       rgba(230, 245, 241, 0.18);
+$shadow:       rgba(0, 0, 0, 0.55);
+$btn-bg:       $mint;      // near-black on mint = 8.4:1
+$btn-fg:       #0B1512;
+$btn-hover-bg: $seafoam;
+$chart-text:   #E6F5F1;
+
+$body-bg: $page-bg;
+$body-color: $text;
+$link-color: $accent-text;
+$link-hover-color: $accent-hover;
+$primary: $mint;
+$card-bg: $surface;
+$text-muted: $muted;
+
+$font-family-sans-serif: "Questrial", "Segoe UI", Helvetica, Arial, sans-serif;
+$font-family-base: $font-family-sans-serif;
+$headings-font-weight: 400;
+$font-weight-bold: 400;
+$font-weight-bolder: 400;
+
+$navbar-bg: $forest;
+$navbar-fg: #FFFFFF;
+$navbar-hl: $aqua;
+$footer-bg: $forest;
+$footer-fg: #FFFFFF;
+
+/*-- scss:rules --*/
+@import "site-components";

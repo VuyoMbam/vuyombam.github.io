@@ -7,6 +7,7 @@ project:
   resources:
     - googlecf6de51e88026b7b.html
     - robots.txt
+    - assets/fonts/*
 
 
 website: 
@@ -21,7 +22,6 @@ website:
   site-url: "https://vuyombam.github.io"
   page-navigation: true
   navbar:
-    background: "#000000" 
     search: true
     left: 
       - text: "Articles"
@@ -44,7 +44,6 @@ website:
 
   page-footer: 
     center: "© 2025–2026, Vuyo Mbam"
-    background: "#120424"
 
 
       
@@ -53,7 +52,20 @@ format:
     anchor-sections: false
     canonical-url: true
     page-layout: full
-    mainfont: 'consolas'
-    theme: [styles.scss]
+    # Light is the default; the navbar toggle switches to dark and remembers the choice.
+    theme:
+      light: [styles-light.scss]
+      dark: [styles-dark.scss]
+    respect-user-color-scheme: false
+    include-in-header:
+      text: |
+        <link rel="preload" href="/assets/fonts/Questrial-latin.woff2" as="font" type="font/woff2" crossorigin>
+        <script>
+          // Plotly measures text when it draws; redraw once Questrial has loaded so labels fit.
+          document.fonts && document.fonts.ready.then(function () {
+            if (!window.Plotly) return;
+            document.querySelectorAll('.js-plotly-plot').forEach(function (g) { Plotly.Plots.resize(g); });
+          });
+        </script>
     toc: false
 

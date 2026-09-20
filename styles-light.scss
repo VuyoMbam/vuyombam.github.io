@@ -1,0 +1,47 @@
+/*-- scss:defaults --*/
+// Brand palette (see site_utils/palette.py for the chart equivalents)
+$forest:  #1E4038;
+$teal:    #3C7F70;
+$mint:    #5ABFA9;
+$seafoam: #6CE5CA;
+$aqua:    #78FFE1;
+
+// Roles that differ between the light and dark themes
+$page-bg:      #F7FCFA;
+$surface:      #FFFFFF;
+$text:         $forest;
+$muted:        #4F6B64;
+$accent:       $teal;      // icons, borders, fills
+$accent-text:  $teal;      // links, headings (4.5:1 on $page-bg)
+$accent-hover: $forest;
+$border:       rgba(30, 64, 56, 0.18);
+$shadow:       rgba(30, 64, 56, 0.14);
+$btn-bg:       $teal;      // white on teal = 4.7:1
+$btn-fg:       #FFFFFF;
+$btn-hover-bg: $forest;
+$chart-text:   $forest;
+
+$body-bg: $page-bg;
+$body-color: $text;
+$link-color: $accent-text;
+$link-hover-color: $accent-hover;
+$primary: $teal;
+$card-bg: $surface;
+$text-muted: $muted;
+
+$font-family-sans-serif: "Questrial", "Segoe UI", Helvetica, Arial, sans-serif;
+$font-family-base: $font-family-sans-serif;
+// Questrial only ships a regular weight; asking for bold makes browsers fake
+// it. Hierarchy comes from size and colour instead.
+$headings-font-weight: 400;
+$font-weight-bold: 400;
+$font-weight-bolder: 400;
+
+$navbar-bg: $forest;
+$navbar-fg: #FFFFFF;
+$navbar-hl: $aqua;
+$footer-bg: $forest;
+$footer-fg: #FFFFFF;
+
+/*-- scss:rules --*/
+@import "site-components";

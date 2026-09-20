@@ -1,0 +1,233 @@
+// Shared component rules. Colours come from the variables each theme defines
+// in styles-light.scss / styles-dark.scss, so nothing here is hardcoded.
+
+/* ---------- Font (self-hosted; no requests to Google) ---------- */
+@font-face {
+    font-family: "Questrial";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/fonts/Questrial-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: "Questrial";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/fonts/Questrial-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body {
+    font-synthesis: none;   // never fake bold/italic for a single-weight font
+}
+
+:root {
+    --chart-text: #{$chart-text};
+    --chart-halo: #{$page-bg};   // Plotly draws a halo behind Sankey labels; match the page, not white
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+    background-color: $page-bg;
+    padding: 0;
+    z-index: 1000;
+}
+
+.navbar .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $forest;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 6px 18px $shadow;
+}
+
+.navbar-nav .nav-link i {
+    font-size: 1.25rem;
+    padding-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.quarto-search .bi-search:hover {
+    color: $aqua !important;
+}
+
+.quarto-search {
+    margin-right: 15px;
+}
+
+@media (max-width: 991px) {
+    .navbar-nav .nav-link i {
+        padding-left: 0;
+        margin-right: 10px;
+    }
+}
+
+/* ---------- Hero ---------- */
+.profile-img {
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px $shadow;
+    margin-bottom: 1.5rem;
+}
+
+.hero-container {
+    align-items: center;
+    padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .profile-section {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .profile-img {
+        max-width: 200px;
+    }
+}
+
+/* Headings are plain text on this site: no clickable anchors */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    pointer-events: none;
+    cursor: default;
+    color: inherit;
+    text-decoration: none;
+}
+
+.anchor-section {
+    display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $text;
+}
+
+/* ---------- Article / interview cards ---------- */
+.quarto-grid-item {
+    background: $surface;
+    border: 1px solid $border;
+    border-radius: 12px !important;
+    transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    box-shadow: 0 4px 12px $shadow;
+}
+
+.quarto-grid-item:hover {
+    transform: translateY(-5px);
+    border-bottom: 4px solid $accent;
+}
+
+.quarto-grid-item h3 {
+    font-size: 1.1rem;
+}
+
+// Card metadata (dates, authors, categories): Bootstrap's default grey fails 4.5:1 in dark mode
+.quarto-grid-item .listing-date,
+.quarto-grid-item .listing-author,
+.quarto-grid-item .listing-category,
+.quarto-grid-item .listing-description,
+.text-muted {
+    color: $muted !important;
+}
+
+/* ---------- Call-to-action buttons ---------- */
+.cta-buttons {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-buttons .btn {
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: $accent-text;
+    border: 1px solid $accent;
+    background: transparent;
+}
+
+.cta-buttons .btn:hover {
+    background-color: $btn-bg;
+    border-color: $btn-bg;
+    color: $btn-fg;
+}
+
+.btn-success {
+    background-color: $btn-bg;
+    border-color: $btn-bg;
+    color: $btn-fg;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+    background-color: $btn-hover-bg;
+    border-color: $btn-hover-bg;
+    color: $btn-fg;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px $shadow;
+}
+
+/* ---------- Expertise cards ---------- */
+.expertise-card i,
+iconify-icon {
+    font-size: 3rem;
+    color: $accent;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.expertise-card {
+    padding: 2rem;
+    background: $surface;
+    border: 1px solid $border;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.expertise-card:hover {
+    border-color: $accent;
+    box-shadow: 0 4px 14px $shadow;
+}
+
+.expertise-card:hover i,
+.expertise-card:hover iconify-icon {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.expertise-card h4 {
+    color: $accent-text;
+    margin-bottom: 1rem;
+}
+
+/* ---------- Charts ----------
+   Plotly figures are drawn once and shown in both themes, so their text takes
+   its colour from the page. Marks keep their own (mid-tone) colours.
+   Hover tooltips and text drawn on top of coloured marks (treemap slices) are
+   deliberately not targeted: Plotly picks their colour to contrast with the
+   mark behind them. */
+.js-plotly-plot .infolayer text,      // titles, legends, annotations, colour bars
+.js-plotly-plot .xtick text,
+.js-plotly-plot .ytick text,
+.js-plotly-plot .sankey .node-label {
+    fill: var(--chart-text) !important;
+}
+
+.js-plotly-plot .sankey .node-label {
+    text-shadow:
+         1px  1px 1px var(--chart-halo),
+        -1px -1px 1px var(--chart-halo),
+         1px -1px 1px var(--chart-halo),
+        -1px  1px 1px var(--chart-halo) !important;
+}
