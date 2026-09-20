@@ -234,6 +234,261 @@ iconify-icon {
     margin-bottom: 1rem;
 }
 
+/* ---------- Experience and education (data/profile.yml, site_utils/timeline.py) ---------- */
+
+// Small logo badge. White by default so any logo reads in light and dark;
+// "dark" is for logos drawn in white (e.g. the CSIR).
+.logo-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    height: 48px;
+    min-width: 48px;
+    padding: 6px 9px;
+    background: #FFFFFF;
+    border: 1px solid rgba(30, 64, 56, 0.18);
+    border-radius: 12px;
+    box-shadow: 0 2px 6px $shadow;
+}
+
+.logo-chip img {
+    display: block;
+    height: 30px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+}
+
+.logo-chip--dark {
+    background: $forest;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+// Timeline
+.timeline-list {
+    list-style: none;
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 920px;
+}
+
+.timeline-list::before {
+    content: "";
+    position: absolute;
+    top: 1.5rem;
+    bottom: 0.5rem;
+    left: 11px;
+    width: 3px;
+    border-radius: 3px;
+    background: linear-gradient(to bottom, $accent, $border);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 3rem;
+    margin-bottom: 1.75rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 1.6rem;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: $page-bg;
+    border: 4px solid $accent;
+    box-shadow: 0 0 0 4px $page-bg;
+}
+
+.timeline-item.is-current .timeline-dot {
+    background: $accent;
+}
+
+// A ring that expands and fades from the current role's dot. Only transform and
+// opacity are animated, so it runs on the GPU and does not force repaints.
+.timeline-item.is-current .timeline-dot::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 3px solid $accent;
+    opacity: 0;
+    animation: timeline-pulse 2.6s ease-out infinite;
+}
+
+@keyframes timeline-pulse {
+    0%   { transform: scale(1);   opacity: 0.7; }
+    100% { transform: scale(2.2); opacity: 0; }
+}
+
+.timeline-card,
+.edu-card {
+    background: $surface;
+    border: 1px solid $border;
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 4px 14px $shadow;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.timeline-card:hover,
+.edu-card:hover {
+    transform: translateY(-3px);
+    border-color: $accent;
+}
+
+.timeline-head,
+.edu-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.timeline-title,
+.edu-title {
+    flex: 1 1 220px;
+    min-width: 0;
+}
+
+.timeline-title h3,
+.edu-title h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: $accent-text;
+}
+
+.timeline-org,
+.edu-school {
+    margin: 0.15rem 0 0;
+    color: $muted;
+}
+
+.timeline-date {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0;
+    color: $muted;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.badge-current,
+.badge-honours {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.1rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    background: $btn-bg;
+    color: $btn-fg;
+}
+
+.badge-current {
+    text-transform: uppercase;
+}
+
+.timeline-points {
+    margin: 1rem 0 0;
+    padding-left: 1.1rem;
+}
+
+.timeline-points li {
+    margin-bottom: 0.4rem;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+}
+
+.chips li {
+    padding: 0.15rem 0.75rem;
+    border: 1px solid $border;
+    border-radius: 999px;
+    background: rgba($accent, 0.12);
+    color: $text;
+    font-size: 0.85rem;
+}
+
+// Education
+.edu-grid {
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.edu-card {
+    height: 100%;
+}
+
+.edu-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1rem 0 0;
+    color: $muted;
+}
+
+.edu-highlights {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+}
+
+.edu-highlights li {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 0.4rem;
+}
+
+.edu-highlights i {
+    flex: 0 0 auto;
+    margin-top: 0.3rem;
+    color: $accent-text;
+    font-size: 0.8rem;
+}
+
+// Scroll reveal: only hidden when JavaScript is on (the `js` class is set in the page
+// header) and the visitor has not asked for reduced motion.
+@media (prefers-reduced-motion: no-preference) {
+    .js .timeline-item,
+    .js .edu-card {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.25s ease;
+    }
+
+    .js .timeline-item.is-visible,
+    .js .edu-card.is-visible {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .timeline-item.is-current .timeline-dot::after {
+        animation: none;
+        display: none;
+    }
+}
+
+@media (max-width: 575px) {
+    .timeline-date {
+        white-space: normal;
+    }
+}
+
 /* ---------- Contact section ---------- */
 .hero-cta {
     margin-top: 1rem;

@@ -31,10 +31,11 @@ git add -A && git commit -m "..." && git push
 | `site_utils/` | Shared plotting theme and preview-image export |
 | `styles-light.scss`, `styles-dark.scss` | The two themes. Each only defines colour variables, then imports the shared rules |
 | `_site-components.scss` | Shared component styling (navbar, cards, buttons, chart text). Uses the theme variables, so no colours are hardcoded here |
-| `assets/` | Data for the homepage chart, and `fonts/` (self-hosted Questrial + its OFL licence) |
+| `assets/` | Data for the homepage chart, `fonts/` (self-hosted Questrial + its OFL licence) and `logos/` (small organisation logos) |
+| `data/profile.yml` | The content of the Experience and Education sections |
 | `images/`, `previews/` | Photos and article preview images |
 | `docs/` | Rendered site (generated) |
-| `_freeze/` | Cached results of executed code; commit it |
+| `_freeze/` | Cached results of executed code for articles; commit it. (The homepage always re-runs.) |
 
 ## Writing an article
 
@@ -56,6 +57,16 @@ Things to know:
 - **Homepage:** an article with `featured: true` also appears under "Featured Articles" (the two newest show). With no articles yet, that section hides itself and the Articles page says articles are on the way.
 - **Style:** the font has one weight, so `**bold**` does nothing; use headings, lists and callouts. Do not hardcode colours.
 - **Description:** about 150 characters. It appears on the article card, in Google and in link previews.
+
+## Experience and Education
+
+Both sections on the homepage are built from `data/profile.yml`; you never edit HTML. To add a job or degree, copy an existing entry in that file, change the text, then `quarto render`.
+
+- **Fields:** `role`, `org`, `place`, `start`/`end` (or `current: true`), `points` (bullets), `tags` (skill chips). Education has `degree`, `school`, `place`, `years`, `grade` (the badge) and `highlights`.
+- **Logos:** put a small PNG in `assets/logos/` and reference it with `logo:`. Logos are shown in a white chip so they read in both themes; for a logo drawn in white (like the CSIR's) add `chip: dark`.
+- **Order:** entries appear in the order written, newest first for experience.
+- **Logos are trademarks** of their owners and are used only to show where you worked and studied. Remove one from the YAML if an organisation objects.
+- **Code:** `site_utils/timeline.py` turns the YAML into HTML; the look is in `_site-components.scss` (search "Experience and education").
 
 ## Contact form
 

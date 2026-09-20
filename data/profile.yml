@@ -1,0 +1,61 @@
+# Content for the Experience and Education sections on the homepage.
+# Edit this file, then run `quarto render`. See README.md ("Experience and Education").
+#
+# Each entry:
+#   logo:   file in assets/logos/ (optional)
+#   chip:   "light" (default, white chip) or "dark" (for logos drawn in white)
+#   current: true shows a "Current" badge and a pulsing dot
+#   tags:   short skills shown as chips (optional)
+
+experience:
+  - role: "Energy Sector Analyst & Advisor"
+    org: "Kuungana Advisory Limited"
+    logo: kuungana.png
+    start: "TBC"            # TODO: month and year you joined, e.g. "Jan 2025"
+    end: null
+    current: true
+    points:
+      - "Lead workstreams on energy system modelling for South Africa and other Southern African Power Pool (SAPP) countries."
+      - "Combine technical and financial modelling to produce insights that inform transactions, route-to-market strategies and investment decisions."
+      - "Advise project developers, power traders, utilities and financial institutions."
+      - "Contribute to energy policy and regulation projects in SAPP member countries and beyond, mostly in low- and middle-income countries."
+    tags: ["Energy system modelling", "Financial modelling", "SAPP", "Energy policy & regulation"]
+
+  - role: "Energy Economist"      # CV (Sept 2025) said "Researcher"; confirm which title you want shown
+    org: "Council for Scientific and Industrial Research (CSIR)"
+    place: "Pretoria, South Africa"
+    logo: csir.png
+    chip: dark
+    start: "Oct 2022"
+    end: "TBC"              # TODO: month and year you left, e.g. "Mar 2026"
+    points:
+      - "Led the Just Transition chapter of the Strategic Framework for Offshore Wind Development in South Africa (World Bank / ESMAP)."
+      - "Led the development of a cost-benefit analysis framework and tool for decommissioning, repurposing and repowering coal-fired power stations."
+      - "Led the demand-side analysis and universal clean cooking pathway modelling for a clean cooking and heating roadmap for South Africa, starting with Mpumalanga."
+      - "Led the value chain analysis of lithium-ion and vanadium redox flow batteries to identify localisation opportunities in South Africa."
+      - "Led research for the Department of Higher Education and Training on how ready TVET qualifications are for the green hydrogen economy, presented to the Minister in 2024."
+      - "Provided capacity building to 10 South African SMMEs through the CSIR-EWSETA Energy Industry Support Programme."
+    tags: ["Techno-economic analysis", "Cost-benefit analysis", "Macroeconomic impact modelling", "Value chain analysis", "Just transition"]
+
+education:
+  - degree: "Master of Science in Renewable Energy"
+    school: "Cranfield University"
+    place: "United Kingdom"
+    logo: cranfield.png
+    years: "2021 - 2022"
+    grade: "First Class"
+    highlights:
+      - "Commonwealth Masters Scholarship"
+      - "Commonwealth Masters Scholar mentorship programme"
+      - "Cranfield University Makers Club"
+
+  - degree: "Bachelor of Engineering in Mechatronics"
+    school: "Nelson Mandela University"
+    place: "South Africa"
+    logo: nmu.png
+    years: "2017 - 2021"
+    grade: "First Class"
+    highlights:
+      - "Vice-Chancellor's Scholarship (2017 to 2020)"
+      - "Department of Mechatronics Academic Merit Award (2018, 2019)"
+      - "Tutor and academic mentor to first- and second-year students"
