@@ -41,9 +41,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="/site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="/site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="/site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="/site_libs/bootstrap/bootstrap-2b9a4759b155ce82d7e664e00e671adc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="/site_libs/bootstrap/bootstrap-dark-064c919f9fe73a82b00c386efa001395.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="/site_libs/bootstrap/bootstrap-2b9a4759b155ce82d7e664e00e671adc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="/site_libs/bootstrap/bootstrap-ef1bc5ce5fe1c54015a0849155eac7c3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="/site_libs/bootstrap/bootstrap-dark-dd87ec113740c6597d182e0c1735c967.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="/site_libs/bootstrap/bootstrap-ef1bc5ce5fe1c54015a0849155eac7c3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,6 +77,22 @@ ul.task-list li input[type="checkbox"] {
   document.fonts && document.fonts.ready.then(function () {
     if (!window.Plotly) return;
     document.querySelectorAll('.js-plotly-plot').forEach(function (g) { Plotly.Plots.resize(g); });
+  });
+</script>
+<script>
+  // Name the light/dark toggle for screen readers and tooltips, and keep it in step with the mode.
+  document.addEventListener('DOMContentLoaded', function () {
+    var toggles = document.querySelectorAll('.quarto-color-scheme-toggle');
+    function update() {
+      var label = document.body.classList.contains('quarto-dark') ? 'Switch to light mode' : 'Switch to dark mode';
+      toggles.forEach(function (t) {
+        t.title = label;
+        t.setAttribute('aria-label', label);
+        t.setAttribute('role', 'button');
+      });
+    }
+    update();
+    new MutationObserver(update).observe(document.body, { attributes: true, attributeFilter: ['class'] });
   });
 </script>
 

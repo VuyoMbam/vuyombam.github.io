@@ -43,9 +43,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2b9a4759b155ce82d7e664e00e671adc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-064c919f9fe73a82b00c386efa001395.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-2b9a4759b155ce82d7e664e00e671adc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ef1bc5ce5fe1c54015a0849155eac7c3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-dd87ec113740c6597d182e0c1735c967.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-ef1bc5ce5fe1c54015a0849155eac7c3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
@@ -137,12 +137,21 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
+
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
 <script type="text/javascript">
+
 window.PlotlyConfig = {MathJaxConfig: 'local'};
+
 if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+
 </script>
+
 <script type="module">import "https://cdn.plot.ly/plotly-3.3.0.min"</script>
+
+
 
 <link rel="preload" href="./assets/fonts/Questrial-latin.woff2" as="font" type="font/woff2" crossorigin="">
 <script>
@@ -150,6 +159,22 @@ if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.M
   document.fonts && document.fonts.ready.then(function () {
     if (!window.Plotly) return;
     document.querySelectorAll('.js-plotly-plot').forEach(function (g) { Plotly.Plots.resize(g); });
+  });
+</script>
+<script>
+  // Name the light/dark toggle for screen readers and tooltips, and keep it in step with the mode.
+  document.addEventListener('DOMContentLoaded', function () {
+    var toggles = document.querySelectorAll('.quarto-color-scheme-toggle');
+    function update() {
+      var label = document.body.classList.contains('quarto-dark') ? 'Switch to light mode' : 'Switch to dark mode';
+      toggles.forEach(function (t) {
+        t.title = label;
+        t.setAttribute('aria-label', label);
+        t.setAttribute('role', 'button');
+      });
+    }
+    update();
+    new MutationObserver(update).observe(document.body, { attributes: true, attributeFilter: ['class'] });
   });
 </script>
 
