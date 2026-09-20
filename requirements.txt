@@ -1,0 +1,13 @@
+# Python packages needed to render the site (`quarto render`).
+# Quarto itself (>= 1.8) is installed separately: https://quarto.org/docs/get-started/
+pandas>=2.2
+numpy>=1.26
+plotly>=6.0
+kaleido           # only for site_utils/export.py (saving preview PNGs)
+matplotlib>=3.8
+statsmodels>=0.14 # only for posts/sa_steel_analysis/autos_steel_cons_perc.py
+jupyter
+nbformat
+nbclient
+ipykernel
+pyyaml
