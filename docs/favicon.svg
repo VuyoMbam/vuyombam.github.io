@@ -4,7 +4,14 @@
       <stop offset="0" stop-color="#2A5A4F"/>
       <stop offset="1" stop-color="#1A3A32"/>
     </linearGradient>
+    <clipPath id="mark">
+      <rect x="0" y="14" width="64" height="36"/>
+    </clipPath>
   </defs>
   <rect width="64" height="64" rx="14" fill="url(#tile)"/>
-  <path d="M15 15 L32 50 L49 15" fill="none" stroke="#78FFE1" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- A sawtooth: three verticals joined by two rising diagonals, cut flat top and bottom -->
+  <g clip-path="url(#mark)" fill="none" stroke="#78FFE1" stroke-width="4.5">
+    <path d="M16 14V50M32 14V50M48 14V50"/>
+    <path d="M14.667 53L33.333 11M30.667 53L49.333 11"/>
+  </g>
 </svg>
