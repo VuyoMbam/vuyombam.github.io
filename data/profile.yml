@@ -11,7 +11,7 @@ experience:
   - role: "Energy Sector Analyst & Advisor"
     org: "Kuungana Advisory Limited"
     logo: kuungana.png
-    start: "TBC"            # TODO: month and year you joined, e.g. "Jan 2025"
+    start: "Mar 2026"
     end: null
     current: true
     points:
@@ -21,13 +21,13 @@ experience:
       - "Contribute to energy policy and regulation projects in SAPP member countries and beyond, mostly in low- and middle-income countries."
     tags: ["Energy system modelling", "Financial modelling", "SAPP", "Energy policy & regulation"]
 
-  - role: "Energy Economist"      # CV (Sept 2025) said "Researcher"; confirm which title you want shown
+  - role: "Energy Economist"
     org: "Council for Scientific and Industrial Research (CSIR)"
     place: "Pretoria, South Africa"
     logo: csir.png
     chip: dark
     start: "Oct 2022"
-    end: "TBC"              # TODO: month and year you left, e.g. "Mar 2026"
+    end: "Feb 2026"
     points:
       - "Led the Just Transition chapter of the Strategic Framework for Offshore Wind Development in South Africa (World Bank / ESMAP)."
       - "Led the development of a cost-benefit analysis framework and tool for decommissioning, repurposing and repowering coal-fired power stations."

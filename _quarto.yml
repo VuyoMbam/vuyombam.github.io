@@ -24,7 +24,8 @@ website:
   navbar:
     search: true
     left: 
-      - text: "Articles"
+      - icon: book
+        text: "Articles"
         href: articles.qmd
     right: 
       - icon: envelope
