@@ -7,9 +7,33 @@
 #   current: true shows a "Current" badge and a pulsing dot
 #   tags:   short skills shown as chips (optional)
 
+# Facts for search-engine structured data (site_utils/structured_data.py). Not shown on the
+# page. Only put things here that are already public on the site.
+profile:
+  name: "Vuyo Mbam"
+  site_url: "https://vuyombam.github.io"
+  site_name: "Vuyo Mbam"
+  alternate_site_name: "Energy with Vuyo Mbam"
+  image: "/images/A16A0288.jpg"
+  same_as:
+    - "https://www.linkedin.com/in/vuyo-mbam-495316184/"
+    - "https://github.com/VuyoMbam"
+  knows_about:
+    - "Energy system modelling"
+    - "Long-term energy planning"
+    - "Power system dispatch modelling"
+    - "OSeMOSYS"
+    - "Techno-economic analysis"
+    - "Macroeconomic impact modelling"
+    - "Cost-benefit analysis"
+    - "Just energy transition"
+    - "Offshore wind"
+    - "Southern African Power Pool"
+
 experience:
   - role: "Energy Sector Analyst & Advisor"
     org: "Kuungana Advisory Limited"
+    org_url: "https://www.kuungana-advisory.com"
     logo: kuungana.png
     start: "Mar 2026"
     end: null
@@ -40,6 +64,7 @@ experience:
 education:
   - degree: "Master of Science in Renewable Energy"
     school: "Cranfield University"
+    school_url: "https://www.cranfield.ac.uk"
     place: "United Kingdom"
     logo: cranfield.png
     years: "2021 - 2022"
@@ -51,6 +76,7 @@ education:
 
   - degree: "Bachelor of Engineering in Mechatronics"
     school: "Nelson Mandela University"
+    school_url: "https://www.mandela.ac.za"
     place: "South Africa"
     logo: nmu.png
     years: "2017 - 2021"

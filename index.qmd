@@ -474,3 +474,10 @@ Have a role, a project or a question? Send me a message and I will get back to y
     });
 </script>
 ```
+
+```{python}
+#| output: asis
+# Search-engine structured data (JSON-LD), built from data/profile.yml. Invisible on the page.
+from site_utils import structured_data
+structured_data.show()
+```
