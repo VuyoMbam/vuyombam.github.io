@@ -1,16 +1,13 @@
 [
   {
-    "listing": "/articles.html",
-    "items": [
-      "/posts/sa_steel_analysis/input_output_analysis.html"
-    ]
-  },
-  {
     "listing": "/index.html",
     "items": [
-      "/posts/sa_steel_analysis/input_output_analysis.html",
       "/interviews/cranfield-interview.html",
       "/interviews/interview-with-habib.html"
     ]
+  },
+  {
+    "listing": "/articles.html",
+    "items": []
   }
 ]
