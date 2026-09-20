@@ -17,7 +17,6 @@ website:
   open-graph: 
     site-name: "Vuyo Mbam"
   twitter-card: true
-  canonical-url: true
   search: true
   site-url: "https://vuyombam.github.io"
   page-navigation: true
@@ -52,6 +51,7 @@ website:
 format: 
   html: 
     anchor-sections: false
+    canonical-url: true
     page-layout: full
     mainfont: 'consolas'
     theme: [styles.scss]

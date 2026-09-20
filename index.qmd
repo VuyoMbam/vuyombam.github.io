@@ -1,6 +1,8 @@
 ---
 title: ""
-pagetitle: "Vuyo Mbam – Energy Sector Analyst & Advisor"
+pagetitle: "Energy Sector Analyst & Advisor"
+image: images/A16A0288.jpg
+image-alt: "Portrait of Vuyo Mbam"
 description: "Vuyo Mbam is an energy sector analyst and advisor at the CSIR Energy Centre, supporting South Africa's just energy transition and green industrial development."
 open-graph:
   title: "Vuyo Mbam – Energy Sector Analyst & Advisor"

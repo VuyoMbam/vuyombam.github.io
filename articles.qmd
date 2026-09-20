@@ -1,5 +1,7 @@
 ---
 title: Articles
+image: images/A16A0288.jpg
+image-alt: "Portrait of Vuyo Mbam"
 description: "Articles and analysis by Vuyo Mbam on the South African energy sector and economy."
 listing:
     id: article-listing
