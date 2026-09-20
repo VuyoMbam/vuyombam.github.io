@@ -1,8 +1,13 @@
 ---
 title: ""
+pagetitle: "Vuyo Mbam – Energy Sector Analyst & Advisor"
+description: "Vuyo Mbam is an energy sector analyst and advisor at the CSIR Energy Centre, supporting South Africa's just energy transition and green industrial development."
+open-graph:
+  title: "Vuyo Mbam – Energy Sector Analyst & Advisor"
+twitter-card:
+  title: "Vuyo Mbam – Energy Sector Analyst & Advisor"
 page-layout: full
 toc: false
-css: styles.scss
 listing:
   - id: featured-articles
     contents: posts
@@ -35,7 +40,7 @@ execute:
 
 ::: {.g-col-12 .g-col-md-3}
 
-![](/images/A16A0288.jpg){.profile-img}
+![](/images/A16A0288.jpg){.profile-img fig-alt="Portrait of Vuyo Mbam"}
 
 :::
 
@@ -61,7 +66,7 @@ import plotly.graph_objects as go
 
 # ---------------------------
 # Import data and format
-data = pd.read_csv("assets\eb_2023.csv").set_index("Flow")
+data = pd.read_csv("assets/eb_2023.csv").set_index("Flow")
 df = data.loc[:, "Coal":].astype("float").reset_index()
 
 # --------- Define fuels, and flows ---------------
@@ -263,10 +268,10 @@ fig.show(config={'displayModeBar': False})
 ::: {.grid .expertise-section}
 ::: {.g-col-12 .g-col-md-4 .expertise-card}
 <!-- {{< fa chart-line >}} -->
-{{< iconify mdi power-from-grid mode=sytle >}}
+{{< iconify mdi power-from-grid >}}
 
 #### Techno-economic Analysis
-Skilled in modellingenergy yield performance of multiple energy technologies and discounted cashflow analysis (DCF) to investigage financial metrics such as the NPV, IRR, and payback period to inform investment decisions and policy recommendations.
+Skilled in modelling energy yield performance of multiple energy technologies and discounted cashflow analysis (DCF) to investigate financial metrics such as the NPV, IRR, and payback period to inform investment decisions and policy recommendations.
 :::
 
 ::: {.g-col-12 .g-col-md-4 .expertise-card}

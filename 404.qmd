@@ -1,0 +1,11 @@
+---
+title: "Page not found"
+description: "The page you were looking for does not exist."
+page-layout: article
+toc: false
+search: false
+---
+
+The page you were looking for doesn't exist or has moved.
+
+[Back to the homepage](/index.html) or browse the [articles](/articles.html).
