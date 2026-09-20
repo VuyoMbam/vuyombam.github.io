@@ -41,4 +41,3 @@ pio.templates["site"] = dict(
 )
 
 pio.templates.default = "site"
-print("PLOTLY THEME LOADED")

@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 def save_preview(fig, width = 800, height = 500):
-    output_dir = Path(r"C:\Users\USER\OneDrive\Desktop\random-website\previews")
+    output_dir = Path(__file__).resolve().parent.parent / "previews"
     output_dir.mkdir(parents = True, exist_ok = True)
 
     # Save PNG with the article name (use stem of .qmd)
