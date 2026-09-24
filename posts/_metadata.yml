@@ -3,6 +3,10 @@
 
 author: "Vuyo Mbam"
 
+# Adds schema.org Article structured data to every article (see _filters/article-jsonld.lua)
+filters:
+  - ../_filters/article-jsonld.lua
+
 # Readable line length with a margin column (the rest of the site is full-width)
 page-layout: article
 toc: false

@@ -27,6 +27,8 @@ STYLE NOTES
     the callout below for emphasis. Italics are fine.
   - Start sections with ## (level 2). The title above is the only level-1 heading.
   - Do not set colours by hand: text, charts and boxes follow the light/dark theme.
+  - Search-engine markup (author, date, image, keywords) is added automatically from the
+    front matter above, so keep title, description, date and categories filled in.
 -->
 
 ::: {.lead}
