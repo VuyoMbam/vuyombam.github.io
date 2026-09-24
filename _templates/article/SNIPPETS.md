@@ -38,6 +38,7 @@ Colours to use (all readable on both themes):
 | For | Use |
 |-----|-----|
 | Categories / series | `palette.CATEGORICAL` |
+| Ordered categories (low / medium / high) | `palette.GREENS`, e.g. `color_discrete_map=dict(zip(["Low", "Medium", "High"], palette.GREENS))` |
 | A continuous scale (maps, heat maps) | `palette.SEQUENTIAL` |
 | Fuels | `palette.FUEL_COLORS` |
 

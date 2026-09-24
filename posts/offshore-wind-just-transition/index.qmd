@@ -49,7 +49,8 @@ df = pd.DataFrame({
 df["Label"] = df["Capacity (GW)"].map(lambda v: f"{v:g}")
 
 fig = px.bar(df, x="Year", y="Capacity (GW)", color="Scenario", barmode="group",
-             text="Label", height=440)
+             text="Label", height=440,
+             color_discrete_map=dict(zip(["Low growth", "Medium growth", "High growth"], palette.GREENS)))
 fig.update_traces(textposition="outside", cliponaxis=False)
 fig.update_layout(xaxis_title=None, yaxis_title="Cumulative capacity (GW)", legend_title=None)
 fig.update_xaxes(type="category", showgrid=False)      # years are labels, not a numeric axis

@@ -31,6 +31,13 @@ GRID = "rgba(125, 138, 134, 0.35)"
 # Light-to-dark teal ramp for continuous data (maps, treemaps, heat maps).
 SEQUENTIAL = ["#E6FBF6", SEAFOAM, MINT, TEAL, FOREST]
 
+# Ordered categories in green, for things that go low -> medium -> high (scenarios, tiers).
+# Runs from a light leaf green to a deep teal, so it echoes the site's greens. The band of
+# greens that keeps >= 3:1 on BOTH themes is narrow (the brand's mint/aqua vanish on light,
+# and forest vanishes on dark), so the hue drifts toward teal as it darkens to keep the steps
+# clearly distinct (colour difference >= 24 between neighbours).
+GREENS = ["#439D4B", "#3A8861", "#31726D"]
+
 # Categorical series. Each is >= 3:1 on both LIGHT["bg"] and DARK["bg"].
 CATEGORICAL = [TEAL, "#3F6FE0", "#C4801A", "#D4503C", NEUTRAL, "#8E5BD0"]
 
