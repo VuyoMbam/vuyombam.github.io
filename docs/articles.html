@@ -43,9 +43,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-035e05c2ab22db1d148adf95034b5139.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-ecc1f763da9f72f5bc717921fbbf72ff.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-035e05c2ab22db1d148adf95034b5139.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7b088490b2f4b443b456b999189cab8c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-bfcbe3e8f9fbcb6c227adbd7e6df4074.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-7b088490b2f4b443b456b999189cab8c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -83,9 +83,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -106,7 +106,8 @@ ul.task-list li input[type="checkbox"] {
 <script>document.documentElement.classList.add('js');</script>
 <script>
   // Links that open a new tab must not hand the new page a handle on this one.
-  document.addEventListener('DOMContentLoaded', function () {
+  // Runs on `load`, after Quarto has added target="_blank" to external links.
+  window.addEventListener('load', function () {
     document.querySelectorAll('a[target="_blank"]').forEach(function (a) {
       var rel = (a.getAttribute('rel') || '').split(/\s+/).filter(Boolean);
       ['noopener', 'noreferrer'].forEach(function (r) { if (rel.indexOf(r) < 0) rel.push(r); });
@@ -371,7 +372,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SnVzdCUyMHRyYW5zaXRpb24=">Just transition <span class="quarto-category-count">(1)</span></div><div class="category" data-category="T2Zmc2hvcmUlMjB3aW5k">Offshore wind <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -415,7 +416,37 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-article-listing">
 <div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="T2Zmc2hvcmUlMjB3aW5kJTJDSnVzdCUyMHRyYW5zaXRpb24=" data-listing-date-sort="1790200800000" data-listing-file-modified-sort="1790265225059" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1197">
+<a href="./posts/offshore-wind-just-transition/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./previews/offshore-wind-just-transition.png" class="thumbnail-image card-img" style="height: 150px;" alt="Bar chart of offshore wind capacity in the framework&amp;#039;s low, medium and high growth scenarios">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Making offshore wind work for South Africa’s just transition
+</h5>
+<div class="listing-categories">
 
+<div class="listing-category" onclick="window.quartoListingCategory('T2Zmc2hvcmUlMjB3aW5k'); return false;">Offshore wind</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SnVzdCUyMHRyYW5zaXRpb24='); return false;">Just transition</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Highlights from the Just Transition chapter of the Strategic Framework for Offshore Wind Development in South Africa, published in September 2026.</p>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Vuyo Mbam
+</div>
+<div class="listing-date">
+Sep 24, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->
