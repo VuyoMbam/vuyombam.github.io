@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 from site_utils import palette
 
 
-def _light_copy(fig):
+def _light_copy(fig, title=None):
     """Copy of `fig` with explicit light-theme colours.
 
     Charts on the site leave text colour to the page's CSS, which a static PNG
@@ -20,17 +20,26 @@ def _light_copy(fig):
         plot_bgcolor=palette.LIGHT["bg"],
     )
     fig.update_annotations(font_color=palette.LIGHT["muted"])
+    if title:
+        fig.update_layout(title_text=title, title_font_size=28)
     return fig
 
 
-def save_preview(fig, width = 800, height = 500):
+def save_preview(fig, width = 1200, height = 630, title = None):
+    """Save `fig` as previews/<article>.png (the default size suits link previews and cards).
+
+    The file is named after the article's folder (posts/<article>/index.qmd), or after the
+    .qmd file itself for a page that is not called index.qmd. Point the article's `image:`
+    front matter at /previews/<article>.png. `title` adds a heading inside the picture, which
+    is useful because a shared preview appears without the page's caption.
+    """
     output_dir = Path(__file__).resolve().parent.parent / "previews"
     output_dir.mkdir(parents = True, exist_ok = True)
 
-    # Save PNG with the article name (use stem of .qmd)
-    doc_path = Path(os.environ["QUARTO_DOCUMENT_FILE"])
-    article_name = doc_path.stem
+    # Quarto gives the file name (QUARTO_DOCUMENT_FILE) and its folder (QUARTO_DOCUMENT_PATH) separately
+    doc_file = Path(os.environ["QUARTO_DOCUMENT_FILE"])
+    doc_folder = Path(os.environ.get("QUARTO_DOCUMENT_PATH", ".")).resolve()
+    article_name = doc_folder.name if doc_file.stem == "index" else doc_file.stem
     preview_path = output_dir / f"{article_name}.png"
 
-    # Export PNG
-    _light_copy(fig).write_image(preview_path, width = 800, height = 800)
+    _light_copy(fig, title).write_image(preview_path, width = width, height = height)

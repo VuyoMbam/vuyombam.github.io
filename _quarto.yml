@@ -74,7 +74,8 @@ format:
         <script>document.documentElement.classList.add('js');</script>
         <script>
           // Links that open a new tab must not hand the new page a handle on this one.
-          document.addEventListener('DOMContentLoaded', function () {
+          // Runs on `load`, after Quarto has added target="_blank" to external links.
+          window.addEventListener('load', function () {
             document.querySelectorAll('a[target="_blank"]').forEach(function (a) {
               var rel = (a.getAttribute('rel') || '').split(/\s+/).filter(Boolean);
               ['noopener', 'noreferrer'].forEach(function (r) { if (rel.indexOf(r) < 0) rel.push(r); });

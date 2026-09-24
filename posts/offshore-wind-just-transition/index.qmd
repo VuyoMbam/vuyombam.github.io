@@ -1,0 +1,111 @@
+---
+title: "Making offshore wind work for South Africa's just transition"
+description: "Highlights from the Just Transition chapter of the Strategic Framework for Offshore Wind Development in South Africa, published in September 2026."
+date: 2026-09-24
+categories: [Offshore wind, Just transition]
+image: /previews/offshore-wind-just-transition.png
+image-alt: "Bar chart of offshore wind capacity in the framework's low, medium and high growth scenarios"
+featured: true
+---
+
+::: {.lead}
+The Strategic Framework for Offshore Wind Development in South Africa was published in September 2026, after endorsement by the Department of Electricity and Energy. This is what the framework sets out, and what its Just Transition chapter says about making sure the benefits reach the people and places that need them.
+:::
+
+::: {.linkedin-post}
+[Shared on LinkedIn · September 2026]{.post-source}
+
+Grateful to see that the Strategic Framework for Offshore Wind Development in South Africa has now been published. 🌊
+
+Prepared under the World Bank's ESMAP Offshore Wind Development Program, it is the first document of its kind for South Africa, in a series that includes studies for countries such as the Philippines and Azerbaijan.
+
+I had the privilege of leading the Just Transition chapter (Chapter 14), together with my former CSIR colleagues - Tshwanelo Rakaibe and Abram Marema. It has been a long road to publication, so it means a great deal to see it out in the world.
+
+#OffshoreWind #JustTransition #SouthAfrica #EnergyTransition
+
+[View the original post on LinkedIn](https://www.linkedin.com/posts/vuyo-mbam-495316184_offshorewind-justtransition-southafrica-ugcPost-7507678496534450177-k0Lv)
+:::
+
+## What the framework covers
+
+The framework was prepared for the World Bank by the Carbon Trust, with support from the CSIR, Meridian Economics and The Biodiversity Consultancy, in collaboration with the South African government. It maps where offshore wind could be built, finding about 95 GW of indicative technical potential, most of it floating. It then tests three growth scenarios out to 2050.
+
+For the high growth scenario, the report finds that offshore wind could support over 300,000 full-time-equivalent job years and US$6.7 billion in employment wages by 2050, and could cut electricity-sector emissions by up to 530 million tonnes of CO₂ by 2050.
+
+```{python}
+#| label: fig-scenarios
+#| fig-cap: "Cumulative offshore wind capacity in the framework's three growth scenarios. Source: Strategic Framework for Offshore Wind Development in South Africa (ESMAP / World Bank, 2026), Table 2."
+import os, sys
+sys.path.insert(0, os.environ["QUARTO_PROJECT_DIR"])   # lets the article import site_utils
+import pandas as pd
+import plotly.express as px
+from site_utils import charts, export, palette, plotly_theme
+
+df = pd.DataFrame({
+    "Year": ["2035", "2040", "2050"] * 3,
+    "Scenario": ["Low growth"] * 3 + ["Medium growth"] * 3 + ["High growth"] * 3,
+    "Capacity (GW)": [0.5, 1, 5,  1, 5, 15,  1, 8, 40],
+})
+df["Label"] = df["Capacity (GW)"].map(lambda v: f"{v:g}")
+
+fig = px.bar(df, x="Year", y="Capacity (GW)", color="Scenario", barmode="group",
+             text="Label", height=440)
+fig.update_traces(textposition="outside", cliponaxis=False)
+fig.update_layout(xaxis_title=None, yaxis_title="Cumulative capacity (GW)", legend_title=None)
+fig.update_xaxes(type="category", showgrid=False)      # years are labels, not a numeric axis
+
+charts.show(fig, config={"displayModeBar": False})
+export.save_preview(fig, title="Offshore wind capacity in South Africa: three growth scenarios")   # writes previews/offshore-wind-just-transition.png
+```
+
+## Chapter 14: making the transition just
+
+Chapter 14 asks how a new offshore wind industry can contribute to South Africa's just transition. It uses the three principles in the national Just Transition Framework, which are procedural, distributive and restorative justice. It is a high-level assessment based on desktop research, drawing on international experience and on South Africa's own renewable energy programmes. Six ideas stood out.
+
+### 1. The jobs dividend grows with scale
+
+In the early years of a new offshore wind industry, most of the work is done with imported labour and equipment. Local value starts with grid connection, operations and maintenance and support services such as finance, education and training, and it rises as more projects are commissioned and a domestic industry develops.
+
+### 2. Local value can leak, even in mature markets
+
+The UK was an early mover and has one of the largest installed offshore wind capacities in the world. Even so, UK content made up only 9 of the 53 percentage points of total project spend that goes to capital expenditure. It was much higher in operations, at 33 of the 45.5 percentage points.
+
+The UK focused on lowering the cost of energy first, and only later set a target of 60% local content for projects commissioned from 2030, up from an estimated 32% in 2017. South Africa's solar PV and onshore wind programmes raised their local content requirements in steps over successive bid windows, an approach the chapter says could be considered for offshore wind. It also cautions that requirements applied too strictly can raise costs and slow the market.
+
+### 3. The coal transition is bigger than Mpumalanga
+
+Mpumalanga produces about 80% of South Africa's coal, and the coal value chain employs over 100,000 people. Many of those workers are migrants from other provinces, such as the Eastern Cape, so vulnerability is not confined to one province. Renewable energy, including offshore wind with its distributed nature, can partly replace lost coal jobs in Mpumalanga and other provinces.
+
+### 4. It can anchor other Just Energy Transition priorities
+
+At medium and high scale, offshore wind can supply reliable clean power to sectors that the Just Energy Transition Investment Plan (JET-IP) prioritises, such as new energy vehicles and green hydrogen. The Northern Cape has excellent offshore wind resource and is also where the JET-IP plans a green hydrogen skills zone. The chapter notes that this synergy could lower the levelised cost of hydrogen.
+
+### 5. Skills need a market
+
+The Komati Training Facility, being developed at Eskom's decommissioned Komati power station in Mpumalanga, aims to reskill power station workers and upskill community members for renewable energy work. The chapter is clear, though, that education and training only deliver their benefits if deployment policy creates demand for the skills.
+
+### 6. Justice is a design principle
+
+Procedural justice means consulting affected people early and openly. For offshore wind that includes coastal communities, fishers and shipbuilders, and the Wild Coast seismic survey litigation, where communities said they had not been consulted, shows why.
+
+Distributive justice means making sure gains in one place do not hide losses in another. New supply-chain jobs could mask job losses in fishing, for example, or the benefits of a global industry could be exported out of the communities that host it.
+
+Restorative justice can draw on South Africa's existing tools, such as preferential procurement. The chapter notes that the community ownership trusts used in earlier renewable energy programmes have proved complex and hard to measure, so enterprise development and socio-economic development spending may suit early offshore wind projects better.
+
+## Why it matters
+
+Offshore wind at the scale of the high growth scenario would be a large industrial undertaking. Whether it becomes a just one depends on decisions taken early: what goes into long-term energy planning, how local content is designed, where skills are built, and who is consulted.
+
+It was a privilege to work on this chapter with Tshwanelo Rakaibe and Abram Marema. Thank you also to ESMAP and the World Bank Group, the Carbon Trust, Meridian Economics, The Biodiversity Consultancy, the CSIR and the Department of Electricity and Energy.
+
+## Read more
+
+- [The full report](https://documents1.worldbank.org/curated/en/099091026151019349/pdf/P180424-80d10434-adf4-4df5-b52b-d20502228a4a.pdf) (World Bank Documents, PDF)
+- [ESMAP's announcement on LinkedIn](https://www.linkedin.com/posts/esmap-energy-sector-management-assistance-program_strategic-framework-for-offshore-wind-dev-activity-7506029460924592128-VgRv)
+
+## Sources
+
+1. ESMAP / World Bank (2026), *A Strategic Framework for Offshore Wind Development in South Africa*. Page numbers below are the report's own.
+2. Framework scope, potential and headline figures: executive summary, pp. XX to XXIII, and the growth scenarios, Section 3.2 and Table 2, p. 13.
+3. Chapter 14 (Just Transition), pp. 188 to 199: scale and local value, pp. 190 to 191; UK local content, pp. 192 and 195; coal transition, pp. 193 to 194; JET-IP and skills, pp. 189 and 197; procedural, distributive and restorative justice, pp. 198 to 199.
+4. Report acknowledgements, p. XIV.

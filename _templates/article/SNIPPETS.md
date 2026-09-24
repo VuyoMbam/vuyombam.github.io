@@ -49,7 +49,7 @@ After `charts.show(fig)`, add:
 
 ```python
 from site_utils import export
-export.save_preview(fig)   # writes previews/<article-name>.png (needs kaleido)
+export.save_preview(fig, title="A short heading for the picture")   # writes previews/<article-folder-name>.png (needs kaleido)
 ```
 
-Then set `image: /previews/<article-name>.png` in the article's front matter.
+The file is named after the article's folder (`posts/my-article/index.qmd` gives `previews/my-article.png`), 1200 x 630 px, drawn on the light theme. The `title` is optional but useful: a shared preview appears without the page's caption. Then set `image: /previews/<article-folder-name>.png` in the article's front matter.

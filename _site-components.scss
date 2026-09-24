@@ -612,6 +612,7 @@ figcaption,
 .js-plotly-plot .infolayer text,      // titles, legends, annotations, colour bars
 .js-plotly-plot .xtick text,
 .js-plotly-plot .ytick text,
+.js-plotly-plot .bartext-outside,      // bar labels drawn above the bars (inside labels self-contrast)
 .js-plotly-plot .sankey .node-label {
     fill: var(--chart-text) !important;
 }
