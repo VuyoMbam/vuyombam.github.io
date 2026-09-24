@@ -1,6 +1,6 @@
 ---
 title: "Making offshore wind work for South Africa's just transition"
-description: "Highlights from the Just Transition chapter of the Strategic Framework for Offshore Wind Development in South Africa, published in September 2026."
+description: "My highlights from the Just Transition chapter I led in the Strategic Framework for Offshore Wind Development in South Africa, published in September 2026."
 date: 2026-09-24
 categories: [Offshore wind, Just transition]
 image: /previews/offshore-wind-just-transition.png
@@ -9,7 +9,7 @@ featured: true
 ---
 
 ::: {.lead}
-The Strategic Framework for Offshore Wind Development in South Africa was published in September 2026, after endorsement by the Department of Electricity and Energy. This is what the framework sets out, and what its Just Transition chapter says about making sure the benefits reach the people and places that need them.
+The Strategic Framework for Offshore Wind Development in South Africa was published in September 2026, after endorsement by the Department of Electricity and Energy. I led its Just Transition chapter, so I want to share what the framework sets out, and the ideas from that chapter that I think matter most for making sure the benefits reach the people and places that need them.
 :::
 
 ::: {.linkedin-post}
@@ -61,29 +61,29 @@ export.save_preview(fig, title="Offshore wind capacity in South Africa: three gr
 
 ## Chapter 14: making the transition just
 
-Chapter 14 asks how a new offshore wind industry can contribute to South Africa's just transition. It uses the three principles in the national Just Transition Framework, which are procedural, distributive and restorative justice. It is a high-level assessment based on desktop research, drawing on international experience and on South Africa's own renewable energy programmes. Six ideas stood out.
+Chapter 14, which I led, asks how a new offshore wind industry can contribute to South Africa's just transition. We used the three principles in the national Just Transition Framework, which are procedural, distributive and restorative justice. It is a high-level assessment: we relied on desktop research, drawing on international experience and on South Africa's own renewable energy programmes. These are six ideas from the chapter that stand out to me.
 
 ### 1. The jobs dividend grows with scale
 
-In the early years of a new offshore wind industry, most of the work is done with imported labour and equipment. Local value starts with grid connection, operations and maintenance and support services such as finance, education and training, and it rises as more projects are commissioned and a domestic industry develops.
+In the early years of a new offshore wind industry, most of the work is done with imported labour and equipment. Local value starts with grid connection, operations and maintenance and support services such as finance, education and training, and it rises as more projects are commissioned and a domestic industry develops. What I take from this is that the size and pace of the pipeline matter as much as the policies wrapped around it.
 
 ### 2. Local value can leak, even in mature markets
 
 The UK was an early mover and has one of the largest installed offshore wind capacities in the world. Even so, UK content made up only 9 of the 53 percentage points of total project spend that goes to capital expenditure. It was much higher in operations, at 33 of the 45.5 percentage points.
 
-The UK focused on lowering the cost of energy first, and only later set a target of 60% local content for projects commissioned from 2030, up from an estimated 32% in 2017. South Africa's solar PV and onshore wind programmes raised their local content requirements in steps over successive bid windows, an approach the chapter says could be considered for offshore wind. It also cautions that requirements applied too strictly can raise costs and slow the market.
+The UK focused on lowering the cost of energy first, and only later set a target of 60% local content for projects commissioned from 2030, up from an estimated 32% in 2017. South Africa's solar PV and onshore wind programmes raised their local content requirements in steps over successive bid windows, an approach the chapter says could be considered for offshore wind. It also cautions that requirements applied too strictly can raise costs and slow the market. My reading is that local content is a long game, best raised in steps as the market matures and balanced against the cost of energy.
 
 ### 3. The coal transition is bigger than Mpumalanga
 
-Mpumalanga produces about 80% of South Africa's coal, and the coal value chain employs over 100,000 people. Many of those workers are migrants from other provinces, such as the Eastern Cape, so vulnerability is not confined to one province. Renewable energy, including offshore wind with its distributed nature, can partly replace lost coal jobs in Mpumalanga and other provinces.
+Mpumalanga produces about 80% of South Africa's coal, and the coal value chain employs over 100,000 people. Many of those workers are migrants from other provinces, such as the Eastern Cape, so vulnerability is not confined to one province. Renewable energy, including offshore wind with its distributed nature, can partly replace lost coal jobs in Mpumalanga and other provinces. It is a reminder that the coal transition is a national story, not only a Mpumalanga one.
 
 ### 4. It can anchor other Just Energy Transition priorities
 
-At medium and high scale, offshore wind can supply reliable clean power to sectors that the Just Energy Transition Investment Plan (JET-IP) prioritises, such as new energy vehicles and green hydrogen. The Northern Cape has excellent offshore wind resource and is also where the JET-IP plans a green hydrogen skills zone. The chapter notes that this synergy could lower the levelised cost of hydrogen.
+At medium and high scale, offshore wind can supply reliable clean power to sectors that the Just Energy Transition Investment Plan (JET-IP) prioritises, such as new energy vehicles and green hydrogen. The Northern Cape has excellent offshore wind resource and is also where the JET-IP plans a green hydrogen skills zone. The chapter notes that this synergy could lower the levelised cost of hydrogen. I see this as a strong argument for planning offshore wind alongside the JET-IP priorities, not separately from them.
 
 ### 5. Skills need a market
 
-The Komati Training Facility, being developed at Eskom's decommissioned Komati power station in Mpumalanga, aims to reskill power station workers and upskill community members for renewable energy work. The chapter is clear, though, that education and training only deliver their benefits if deployment policy creates demand for the skills.
+The Komati Training Facility, being developed at Eskom's decommissioned Komati power station in Mpumalanga, aims to reskill power station workers and upskill community members for renewable energy work. The chapter is clear, though, that education and training only deliver their benefits if deployment policy creates demand for the skills. The point I would stress is that skills programmes and market development have to move together.
 
 ### 6. Justice is a design principle
 
@@ -93,11 +93,13 @@ Distributive justice means making sure gains in one place do not hide losses in 
 
 Restorative justice can draw on South Africa's existing tools, such as preferential procurement. The chapter notes that the community ownership trusts used in earlier renewable energy programmes have proved complex and hard to measure, so enterprise development and socio-economic development spending may suit early offshore wind projects better.
 
+For me, this is the heart of the chapter: justice is not something to add at the end, but a way of designing the industry from the start.
+
 ## Why it matters
 
-Offshore wind at the scale of the high growth scenario would be a large industrial undertaking. Whether it becomes a just one depends on decisions taken early: what goes into long-term energy planning, how local content is designed, where skills are built, and who is consulted.
+Offshore wind at the scale of the high growth scenario would be a large industrial undertaking. Whether it becomes a just one depends on decisions taken early: what goes into long-term energy planning, how local content is designed, where skills are built, and who is consulted. If there is one thing I hope readers take from the chapter, it is that these choices are easiest to get right at the start.
 
-It was a privilege to work on this chapter with Tshwanelo Rakaibe and Abram Marema. Thank you also to ESMAP and the World Bank Group, the Carbon Trust, Meridian Economics, The Biodiversity Consultancy, the CSIR and the Department of Electricity and Energy.
+It was a privilege to lead this chapter. I am grateful to Tshwanelo Rakaibe for the guidance and review, and to Abram Marema for his inputs. Thank you also to ESMAP and the World Bank Group, the Carbon Trust, Meridian Economics, The Biodiversity Consultancy, the CSIR and the Department of Electricity and Energy.
 
 ## Read more
 
